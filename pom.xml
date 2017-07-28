@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.gov.ans</groupId>
+	<artifactId>ans-commons-sei</artifactId>
+	<version>0.2</version>
+	<name>ans-commons-sei</name>
+	<packaging>jar</packaging>
+	<description>Biblioteca de apoio aos clientes do SEI-Broker.</description>
+	
+	<dependencies>
+		<!-- JACKSON -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jackson-provider</artifactId>
+			<version>3.1.0.Final</version>
+		</dependency>
+	
+		<!-- HASH -->
+		<dependency>
+		    <groupId>br.gov.ans.commons</groupId>
+		    <artifactId>ans-commons-security</artifactId>
+		    <version>2.0</version>
+		</dependency>
+
+		<!-- BASE64 -->
+		<dependency>
+		    <groupId>commons-codec</groupId>
+		    <artifactId>commons-codec</artifactId>
+		    <version>1.10</version>
+		</dependency>
+	</dependencies>
+	
+</project>
