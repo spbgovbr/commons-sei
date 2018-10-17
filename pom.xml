@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>br.gov.ans</groupId>
-	<artifactId>ans-commons-sei</artifactId>
-	<version>1.0.0</version>
+    <groupId>br.gov.ans.commons</groupId>
+    <artifactId>ans-commons-sei</artifactId>
+	<version>1.1.0</version>
 	<name>ans-commons-sei</name>
 	<packaging>jar</packaging>
 	<description>Biblioteca de apoio aos clientes do SEI-Broker.</description>
