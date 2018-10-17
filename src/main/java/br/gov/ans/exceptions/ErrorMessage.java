@@ -1,8 +1,5 @@
 package br.gov.ans.exceptions;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
 public class ErrorMessage {
 	private String error;
 	private String code;
