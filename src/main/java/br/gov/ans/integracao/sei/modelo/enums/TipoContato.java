@@ -1,8 +1,5 @@
 package br.gov.ans.integracao.sei.modelo.enums;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
 public enum TipoContato {
 	usuarios_abc("1"),
 	sistemas("2"),

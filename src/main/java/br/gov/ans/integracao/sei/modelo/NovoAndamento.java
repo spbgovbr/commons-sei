@@ -2,6 +2,12 @@ package br.gov.ans.integracao.sei.modelo;
 
 import java.util.HashMap;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class NovoAndamento {
 
 	private String tarefa;

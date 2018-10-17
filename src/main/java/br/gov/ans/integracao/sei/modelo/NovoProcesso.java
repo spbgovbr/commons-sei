@@ -2,13 +2,17 @@ package br.gov.ans.integracao.sei.modelo;
 
 import java.util.Date;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import br.gov.ans.integracao.sei.client.Documento;
 import br.gov.ans.integracao.sei.client.Procedimento;
 
-@XmlRootElement
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class NovoProcesso {	
+	
 	private Procedimento dadosProcesso;
 	private Documento[] documentos;
 	private String[] processosRelacionados;

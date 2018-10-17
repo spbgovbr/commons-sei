@@ -2,18 +2,21 @@ package br.gov.ans.integracao.sei.modelo;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ExclusaoDocumento {
 
+	private long id;
 	private Date data;
-
 	private String numero;
-
 	private String sistema;
-
 	private String unidade;
-
 	private String motivo;
-
 	
 	public ExclusaoDocumento(){		
 	}
@@ -24,6 +27,15 @@ public class ExclusaoDocumento {
 		this.unidade = unidade;
 		this.motivo = motivo;
 		this.data = new Date();		
+	}
+	
+	@JsonIgnore
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public Date getData() {

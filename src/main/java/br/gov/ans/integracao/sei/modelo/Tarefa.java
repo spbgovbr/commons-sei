@@ -1,21 +1,20 @@
 package br.gov.ans.integracao.sei.modelo;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Tarefa {
-
+	
 	private Long identificador;
-
 	private String nome;
-
 	private Long identicadorTarefaModulo;
-
 	private String historicoResumido;
-
 	private String historicoCompleto;
-
 	private String fecharAndamentosAbertos;
-
 	private String lancarAndamentoFechado;
-
 	private String permiteProcessoFechado;
 
 	public Long getIdentificador() {

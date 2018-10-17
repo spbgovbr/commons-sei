@@ -1,11 +1,15 @@
 package br.gov.ans.integracao.sei.modelo;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import br.gov.ans.integracao.sei.client.RetornoInclusaoDocumento;
 
-@XmlRootElement
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ResultadoInclusaoDocumento {
+	
 	private RetornoInclusaoDocumento retorno;
 	private String mensagem;
 	

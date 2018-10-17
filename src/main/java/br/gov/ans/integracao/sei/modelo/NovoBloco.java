@@ -1,12 +1,13 @@
 package br.gov.ans.integracao.sei.modelo;
 
-import javax.xml.bind.annotation.XmlRootElement;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import br.gov.ans.integracao.sei.modelo.enums.TipoBloco;
 
-@XmlRootElement
+@JsonInclude(content = Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class NovoBloco {
 

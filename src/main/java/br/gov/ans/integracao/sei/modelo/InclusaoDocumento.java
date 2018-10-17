@@ -2,26 +2,26 @@ package br.gov.ans.integracao.sei.modelo;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 import br.gov.ans.integracao.sei.client.Documento;
 
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class InclusaoDocumento {
 
+	private long id;
 	private Date data;
-
 	private String nome;
-
 	private String numero;
-
 	private String hash;
-
 	private String sistema;
-
 	private String unidade;
-
 	private String processo;
-
 	private String numeroInformado;
-
 	private String link;	
 	
 	public InclusaoDocumento(){
@@ -38,6 +38,16 @@ public class InclusaoDocumento {
 		this.processo = documento.getIdProcedimento();
 		
 		this.data = new Date();
+	}
+
+	@JsonIgnore
+	public long getId() {
+		return id;
+	}
+
+	@JsonIgnore
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public Date getData() {

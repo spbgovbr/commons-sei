@@ -2,13 +2,20 @@ package br.gov.ans.integracao.sei.modelo;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ProcessoResumido {
-	
+
 	private String numero;
 	private String numeroFormatado;
 	private String descricao;
 	private String unidade;
 	private Date dataGeracao;
+	private Tipo tipo;
 
 	public String getNumero() {
 		return numero;
@@ -50,4 +57,11 @@ public class ProcessoResumido {
 		this.dataGeracao = dataGeracao;
 	}
 
+	public Tipo getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
 }

@@ -2,12 +2,16 @@ package br.gov.ans.integracao.sei.modelo;
 
 import java.util.Date;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import br.gov.ans.integracao.sei.modelo.enums.Sexo;
 
-@XmlRootElement
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PessoaFisica extends Pessoa {
+	
 	private Sexo sexo;
 	private String cpf;
 	private String rg;

@@ -1,9 +1,13 @@
 package br.gov.ans.integracao.sei.modelo;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-@XmlRootElement
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Endereco {
+	
 	private String logradouro;
 	private String complemento;
 	private String numero;
@@ -76,5 +80,4 @@ public class Endereco {
 	public String getBairro() {
 		return bairro;
 	}
-
 }
