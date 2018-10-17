@@ -3,32 +3,33 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.gov.ans</groupId>
 	<artifactId>ans-commons-sei</artifactId>
-	<version>0.2</version>
+	<version>1.0.0</version>
 	<name>ans-commons-sei</name>
 	<packaging>jar</packaging>
 	<description>Biblioteca de apoio aos clientes do SEI-Broker.</description>
-	
+
 	<dependencies>
 		<!-- JACKSON -->
 		<dependency>
-			<groupId>org.jboss.resteasy</groupId>
-			<artifactId>resteasy-jackson-provider</artifactId>
-			<version>3.1.0.Final</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.9.7</version>
 		</dependency>
-	
+
+
 		<!-- HASH -->
 		<dependency>
-		    <groupId>br.gov.ans.commons</groupId>
-		    <artifactId>ans-commons-security</artifactId>
-		    <version>2.0</version>
+			<groupId>br.gov.ans.commons</groupId>
+			<artifactId>ans-commons-security</artifactId>
+			<version>2.0</version>
 		</dependency>
 
 		<!-- BASE64 -->
 		<dependency>
-		    <groupId>commons-codec</groupId>
-		    <artifactId>commons-codec</artifactId>
-		    <version>1.10</version>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.10</version>
 		</dependency>
 	</dependencies>
-	
+
 </project>

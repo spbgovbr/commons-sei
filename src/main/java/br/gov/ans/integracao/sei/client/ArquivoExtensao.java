@@ -7,131 +7,99 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
-public class ArquivoExtensao  implements java.io.Serializable {
-    private java.lang.String idArquivoExtensao;
+import java.io.Serializable;
 
-    private java.lang.String extensao;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private java.lang.String descricao;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class ArquivoExtensao implements Serializable {
 
-    public ArquivoExtensao() {
-    }
+	private static final long serialVersionUID = 1L;
 
-    public ArquivoExtensao(
-           java.lang.String idArquivoExtensao,
-           java.lang.String extensao,
-           java.lang.String descricao) {
-           this.idArquivoExtensao = idArquivoExtensao;
-           this.extensao = extensao;
-           this.descricao = descricao;
-    }
+	private String idArquivoExtensao;
 
+	private String extensao;
 
-    /**
-     * Gets the idArquivoExtensao value for this ArquivoExtensao.
-     * 
-     * @return idArquivoExtensao
-     */
-    public java.lang.String getIdArquivoExtensao() {
-        return idArquivoExtensao;
-    }
+	private String descricao;
 
+	public ArquivoExtensao() {
+	}
 
-    /**
-     * Sets the idArquivoExtensao value for this ArquivoExtensao.
-     * 
-     * @param idArquivoExtensao
-     */
-    public void setIdArquivoExtensao(java.lang.String idArquivoExtensao) {
-        this.idArquivoExtensao = idArquivoExtensao;
-    }
+	public ArquivoExtensao(String idArquivoExtensao, String extensao, String descricao) {
+		this.idArquivoExtensao = idArquivoExtensao;
+		this.extensao = extensao;
+		this.descricao = descricao;
+	}
 
+	public String getIdArquivoExtensao() {
+		return idArquivoExtensao;
+	}
 
-    /**
-     * Gets the extensao value for this ArquivoExtensao.
-     * 
-     * @return extensao
-     */
-    public java.lang.String getExtensao() {
-        return extensao;
-    }
+	public void setIdArquivoExtensao(String idArquivoExtensao) {
+		this.idArquivoExtensao = idArquivoExtensao;
+	}
 
+	public String getExtensao() {
+		return extensao;
+	}
 
-    /**
-     * Sets the extensao value for this ArquivoExtensao.
-     * 
-     * @param extensao
-     */
-    public void setExtensao(java.lang.String extensao) {
-        this.extensao = extensao;
-    }
+	public void setExtensao(String extensao) {
+		this.extensao = extensao;
+	}
 
+	public String getDescricao() {
+		return descricao;
+	}
 
-    /**
-     * Gets the descricao value for this ArquivoExtensao.
-     * 
-     * @return descricao
-     */
-    public java.lang.String getDescricao() {
-        return descricao;
-    }
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
+	private Object __equalsCalc = null;
 
-    /**
-     * Sets the descricao value for this ArquivoExtensao.
-     * 
-     * @param descricao
-     */
-    public void setDescricao(java.lang.String descricao) {
-        this.descricao = descricao;
-    }
+	public boolean equals(Object obj) {
+		if (!(obj instanceof ArquivoExtensao))
+			return false;
+		ArquivoExtensao other = (ArquivoExtensao) obj;
+		if (this == obj)
+			return true;
+		if (__equalsCalc != null) {
+			return (__equalsCalc == obj);
+		}
+		__equalsCalc = obj;
+		boolean _equals;
+		_equals = true && ((this.idArquivoExtensao == null && other.getIdArquivoExtensao() == null)
+				|| (this.idArquivoExtensao != null && this.idArquivoExtensao.equals(other.getIdArquivoExtensao())))
+				&& ((this.extensao == null && other.getExtensao() == null)
+						|| (this.extensao != null && this.extensao.equals(other.getExtensao())))
+				&& ((this.descricao == null && other.getDescricao() == null)
+						|| (this.descricao != null && this.descricao.equals(other.getDescricao())));
+		__equalsCalc = null;
+		return _equals;
+	}
 
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof ArquivoExtensao)) return false;
-        ArquivoExtensao other = (ArquivoExtensao) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.idArquivoExtensao==null && other.getIdArquivoExtensao()==null) || 
-             (this.idArquivoExtensao!=null &&
-              this.idArquivoExtensao.equals(other.getIdArquivoExtensao()))) &&
-            ((this.extensao==null && other.getExtensao()==null) || 
-             (this.extensao!=null &&
-              this.extensao.equals(other.getExtensao()))) &&
-            ((this.descricao==null && other.getDescricao()==null) || 
-             (this.descricao!=null &&
-              this.descricao.equals(other.getDescricao())));
-        __equalsCalc = null;
-        return _equals;
-    }
+	private boolean __hashCodeCalc = false;
 
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getIdArquivoExtensao() != null) {
-            _hashCode += getIdArquivoExtensao().hashCode();
-        }
-        if (getExtensao() != null) {
-            _hashCode += getExtensao().hashCode();
-        }
-        if (getDescricao() != null) {
-            _hashCode += getDescricao().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
-
+	public int hashCode() {
+		if (__hashCodeCalc) {
+			return 0;
+		}
+		__hashCodeCalc = true;
+		int _hashCode = 1;
+		if (getIdArquivoExtensao() != null) {
+			_hashCode += getIdArquivoExtensao().hashCode();
+		}
+		if (getExtensao() != null) {
+			_hashCode += getExtensao().hashCode();
+		}
+		if (getDescricao() != null) {
+			_hashCode += getDescricao().hashCode();
+		}
+		__hashCodeCalc = false;
+		return _hashCode;
+	}
 }

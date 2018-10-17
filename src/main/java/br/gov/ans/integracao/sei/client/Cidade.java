@@ -7,264 +7,168 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class Cidade implements java.io.Serializable {
-    private java.lang.String idCidade;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private java.lang.String idEstado;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Cidade implements Serializable {
 
-    private java.lang.String idPais;
+	private static final long serialVersionUID = 1L;
 
-    private java.lang.String nome;
+	private String idCidade;
 
-    private java.lang.String codigoIbge;
+	private String idEstado;
 
-    private java.lang.String sinCapital;
+	private String idPais;
 
-    private java.lang.String latitude;
+	private String nome;
 
-    private java.lang.String longitude;
+	private String codigoIbge;
 
-    public Cidade() {
-    }
-    
-    public Cidade(String ibge) {
-    	this.codigoIbge = ibge;
-    }
+	private String sinCapital;
 
-    public Cidade(
-           java.lang.String idCidade,
-           java.lang.String idEstado,
-           java.lang.String idPais,
-           java.lang.String nome,
-           java.lang.String codigoIbge,
-           java.lang.String sinCapital,
-           java.lang.String latitude,
-           java.lang.String longitude) {
-           this.idCidade = idCidade;
-           this.idEstado = idEstado;
-           this.idPais = idPais;
-           this.nome = nome;
-           this.codigoIbge = codigoIbge;
-           this.sinCapital = sinCapital;
-           this.latitude = latitude;
-           this.longitude = longitude;
-    }
+	private String latitude;
 
+	private String longitude;
 
-    /**
-     * Gets the idCidade value for this Cidade.
-     * 
-     * @return idCidade
-     */
-    public java.lang.String getIdCidade() {
-        return idCidade;
-    }
+	public Cidade() {
+	}
 
+	public Cidade(String ibge) {
+		this.codigoIbge = ibge;
+	}
 
-    /**
-     * Sets the idCidade value for this Cidade.
-     * 
-     * @param idCidade
-     */
-    public void setIdCidade(java.lang.String idCidade) {
-        this.idCidade = idCidade;
-    }
+	public Cidade(String idCidade, String idEstado, String idPais, String nome, String codigoIbge, String sinCapital, String latitude, String longitude) {
+		this.idCidade = idCidade;
+		this.idEstado = idEstado;
+		this.idPais = idPais;
+		this.nome = nome;
+		this.codigoIbge = codigoIbge;
+		this.sinCapital = sinCapital;
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
 
+	public String getIdCidade() {
+		return idCidade;
+	}
 
-    /**
-     * Gets the idEstado value for this Cidade.
-     * 
-     * @return idEstado
-     */
-    public java.lang.String getIdEstado() {
-        return idEstado;
-    }
+	public void setIdCidade(String idCidade) {
+		this.idCidade = idCidade;
+	}
 
+	public String getIdEstado() {
+		return idEstado;
+	}
 
-    /**
-     * Sets the idEstado value for this Cidade.
-     * 
-     * @param idEstado
-     */
-    public void setIdEstado(java.lang.String idEstado) {
-        this.idEstado = idEstado;
-    }
+	public void setIdEstado(String idEstado) {
+		this.idEstado = idEstado;
+	}
 
+	public String getIdPais() {
+		return idPais;
+	}
 
-    /**
-     * Gets the idPais value for this Cidade.
-     * 
-     * @return idPais
-     */
-    public java.lang.String getIdPais() {
-        return idPais;
-    }
+	public void setIdPais(String idPais) {
+		this.idPais = idPais;
+	}
 
+	public String getNome() {
+		return nome;
+	}
 
-    /**
-     * Sets the idPais value for this Cidade.
-     * 
-     * @param idPais
-     */
-    public void setIdPais(java.lang.String idPais) {
-        this.idPais = idPais;
-    }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
+	public String getCodigoIbge() {
+		return codigoIbge;
+	}
 
-    /**
-     * Gets the nome value for this Cidade.
-     * 
-     * @return nome
-     */
-    public java.lang.String getNome() {
-        return nome;
-    }
+	public void setCodigoIbge(String codigoIbge) {
+		this.codigoIbge = codigoIbge;
+	}
 
+	public String getSinCapital() {
+		return sinCapital;
+	}
 
-    /**
-     * Sets the nome value for this Cidade.
-     * 
-     * @param nome
-     */
-    public void setNome(java.lang.String nome) {
-        this.nome = nome;
-    }
+	public void setSinCapital(String sinCapital) {
+		this.sinCapital = sinCapital;
+	}
 
+	public String getLatitude() {
+		return latitude;
+	}
 
-    /**
-     * Gets the codigoIbge value for this Cidade.
-     * 
-     * @return codigoIbge
-     */
-    public java.lang.String getCodigoIbge() {
-        return codigoIbge;
-    }
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
 
+	public String getLongitude() {
+		return longitude;
+	}
 
-    /**
-     * Sets the codigoIbge value for this Cidade.
-     * 
-     * @param codigoIbge
-     */
-    public void setCodigoIbge(java.lang.String codigoIbge) {
-        this.codigoIbge = codigoIbge;
-    }
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
 
+	private Object __equalsCalc = null;
 
-    /**
-     * Gets the sinCapital value for this Cidade.
-     * 
-     * @return sinCapital
-     */
-    public java.lang.String getSinCapital() {
-        return sinCapital;
-    }
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Cidade))
+			return false;
+		Cidade other = (Cidade) obj;
+		if (this == obj)
+			return true;
+		if (__equalsCalc != null) {
+			return (__equalsCalc == obj);
+		}
+		__equalsCalc = obj;
+		boolean _equals;
+		_equals = true && ((this.codigoIbge == null && other.getCodigoIbge() == null)
+				|| (this.codigoIbge != null && this.codigoIbge.equals(other.getCodigoIbge())));
+		__equalsCalc = null;
+		return _equals;
+	}
 
+	private boolean __hashCodeCalc = false;
 
-    /**
-     * Sets the sinCapital value for this Cidade.
-     * 
-     * @param sinCapital
-     */
-    public void setSinCapital(java.lang.String sinCapital) {
-        this.sinCapital = sinCapital;
-    }
-
-
-    /**
-     * Gets the latitude value for this Cidade.
-     * 
-     * @return latitude
-     */
-    public java.lang.String getLatitude() {
-        return latitude;
-    }
-
-
-    /**
-     * Sets the latitude value for this Cidade.
-     * 
-     * @param latitude
-     */
-    public void setLatitude(java.lang.String latitude) {
-        this.latitude = latitude;
-    }
-
-
-    /**
-     * Gets the longitude value for this Cidade.
-     * 
-     * @return longitude
-     */
-    public java.lang.String getLongitude() {
-        return longitude;
-    }
-
-
-    /**
-     * Sets the longitude value for this Cidade.
-     * 
-     * @param longitude
-     */
-    public void setLongitude(java.lang.String longitude) {
-        this.longitude = longitude;
-    }
-
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof Cidade)) return false;
-        Cidade other = (Cidade) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.codigoIbge==null && other.getCodigoIbge()==null) || 
-             (this.codigoIbge!=null &&
-              this.codigoIbge.equals(other.getCodigoIbge())));
-        __equalsCalc = null;
-        return _equals;
-    }
-
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getIdCidade() != null) {
-            _hashCode += getIdCidade().hashCode();
-        }
-        if (getIdEstado() != null) {
-            _hashCode += getIdEstado().hashCode();
-        }
-        if (getIdPais() != null) {
-            _hashCode += getIdPais().hashCode();
-        }
-        if (getNome() != null) {
-            _hashCode += getNome().hashCode();
-        }
-        if (getCodigoIbge() != null) {
-            _hashCode += getCodigoIbge().hashCode();
-        }
-        if (getSinCapital() != null) {
-            _hashCode += getSinCapital().hashCode();
-        }
-        if (getLatitude() != null) {
-            _hashCode += getLatitude().hashCode();
-        }
-        if (getLongitude() != null) {
-            _hashCode += getLongitude().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
-
+	public int hashCode() {
+		if (__hashCodeCalc) {
+			return 0;
+		}
+		__hashCodeCalc = true;
+		int _hashCode = 1;
+		if (getIdCidade() != null) {
+			_hashCode += getIdCidade().hashCode();
+		}
+		if (getIdEstado() != null) {
+			_hashCode += getIdEstado().hashCode();
+		}
+		if (getIdPais() != null) {
+			_hashCode += getIdPais().hashCode();
+		}
+		if (getNome() != null) {
+			_hashCode += getNome().hashCode();
+		}
+		if (getCodigoIbge() != null) {
+			_hashCode += getCodigoIbge().hashCode();
+		}
+		if (getSinCapital() != null) {
+			_hashCode += getSinCapital().hashCode();
+		}
+		if (getLatitude() != null) {
+			_hashCode += getLatitude().hashCode();
+		}
+		if (getLongitude() != null) {
+			_hashCode += getLongitude().hashCode();
+		}
+		__hashCodeCalc = false;
+		return _hashCode;
+	}
 }

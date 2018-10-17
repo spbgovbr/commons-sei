@@ -7,101 +7,83 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class Remetente  implements java.io.Serializable {
-    private java.lang.String sigla;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private java.lang.String nome;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Remetente implements Serializable {
 
-    public Remetente() {
-    }
+	private static final long serialVersionUID = 1L;
 
-    public Remetente(
-           java.lang.String sigla,
-           java.lang.String nome) {
-           this.sigla = sigla;
-           this.nome = nome;
-    }
+	private String sigla;
 
+	private String nome;
 
-    /**
-     * Gets the sigla value for this Remetente.
-     * 
-     * @return sigla
-     */
-    public java.lang.String getSigla() {
-        return sigla;
-    }
+	public Remetente() {
+	}
 
+	public Remetente(String sigla, String nome) {
+		this.sigla = sigla;
+		this.nome = nome;
+	}
 
-    /**
-     * Sets the sigla value for this Remetente.
-     * 
-     * @param sigla
-     */
-    public void setSigla(java.lang.String sigla) {
-        this.sigla = sigla;
-    }
+	public String getSigla() {
+		return sigla;
+	}
 
+	public void setSigla(String sigla) {
+		this.sigla = sigla;
+	}
 
-    /**
-     * Gets the nome value for this Remetente.
-     * 
-     * @return nome
-     */
-    public java.lang.String getNome() {
-        return nome;
-    }
+	public String getNome() {
+		return nome;
+	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    /**
-     * Sets the nome value for this Remetente.
-     * 
-     * @param nome
-     */
-    public void setNome(java.lang.String nome) {
-        this.nome = nome;
-    }
+	private Object __equalsCalc = null;
 
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof Remetente)) return false;
-        Remetente other = (Remetente) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.sigla==null && other.getSigla()==null) || 
-             (this.sigla!=null &&
-              this.sigla.equals(other.getSigla()))) &&
-            ((this.nome==null && other.getNome()==null) || 
-             (this.nome!=null &&
-              this.nome.equals(other.getNome())));
-        __equalsCalc = null;
-        return _equals;
-    }
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Remetente))
+			return false;
+		Remetente other = (Remetente) obj;
+		if (this == obj)
+			return true;
+		if (__equalsCalc != null) {
+			return (__equalsCalc == obj);
+		}
+		__equalsCalc = obj;
+		boolean _equals;
+		_equals = true
+				&& ((this.sigla == null && other.getSigla() == null)
+						|| (this.sigla != null && this.sigla.equals(other.getSigla())))
+				&& ((this.nome == null && other.getNome() == null)
+						|| (this.nome != null && this.nome.equals(other.getNome())));
+		__equalsCalc = null;
+		return _equals;
+	}
 
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getSigla() != null) {
-            _hashCode += getSigla().hashCode();
-        }
-        if (getNome() != null) {
-            _hashCode += getNome().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
+	private boolean __hashCodeCalc = false;
 
+	public int hashCode() {
+		if (__hashCodeCalc) {
+			return 0;
+		}
+		__hashCodeCalc = true;
+		int _hashCode = 1;
+		if (getSigla() != null) {
+			_hashCode += getSigla().hashCode();
+		}
+		if (getNome() != null) {
+			_hashCode += getNome().hashCode();
+		}
+		__hashCodeCalc = false;
+		return _hashCode;
+	}
 }

@@ -7,161 +7,117 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class Cargo  implements java.io.Serializable {
-    private java.lang.String idCargo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private java.lang.String expressaoCargo;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Cargo implements Serializable {
 
-    private java.lang.String expressaoTratamento;
+	private static final long serialVersionUID = 1L;
 
-    private java.lang.String expressaoVocativo;
+	private String idCargo;
 
-    public Cargo() {
-    }
+	private String expressaoCargo;
 
-    public Cargo(
-           java.lang.String idCargo,
-           java.lang.String expressaoCargo,
-           java.lang.String expressaoTratamento,
-           java.lang.String expressaoVocativo) {
-           this.idCargo = idCargo;
-           this.expressaoCargo = expressaoCargo;
-           this.expressaoTratamento = expressaoTratamento;
-           this.expressaoVocativo = expressaoVocativo;
-    }
+	private String expressaoTratamento;
 
+	private String expressaoVocativo;
 
-    /**
-     * Gets the idCargo value for this Cargo.
-     * 
-     * @return idCargo
-     */
-    public java.lang.String getIdCargo() {
-        return idCargo;
-    }
+	public Cargo() {
+	}
 
+	public Cargo(String idCargo, String expressaoCargo, String expressaoTratamento, String expressaoVocativo) {
+		this.idCargo = idCargo;
+		this.expressaoCargo = expressaoCargo;
+		this.expressaoTratamento = expressaoTratamento;
+		this.expressaoVocativo = expressaoVocativo;
+	}
 
-    /**
-     * Sets the idCargo value for this Cargo.
-     * 
-     * @param idCargo
-     */
-    public void setIdCargo(java.lang.String idCargo) {
-        this.idCargo = idCargo;
-    }
+	public String getIdCargo() {
+		return idCargo;
+	}
 
+	public void setIdCargo(String idCargo) {
+		this.idCargo = idCargo;
+	}
 
-    /**
-     * Gets the expressaoCargo value for this Cargo.
-     * 
-     * @return expressaoCargo
-     */
-    public java.lang.String getExpressaoCargo() {
-        return expressaoCargo;
-    }
+	public String getExpressaoCargo() {
+		return expressaoCargo;
+	}
 
+	public void setExpressaoCargo(String expressaoCargo) {
+		this.expressaoCargo = expressaoCargo;
+	}
 
-    /**
-     * Sets the expressaoCargo value for this Cargo.
-     * 
-     * @param expressaoCargo
-     */
-    public void setExpressaoCargo(java.lang.String expressaoCargo) {
-        this.expressaoCargo = expressaoCargo;
-    }
+	public String getExpressaoTratamento() {
+		return expressaoTratamento;
+	}
 
+	public void setExpressaoTratamento(String expressaoTratamento) {
+		this.expressaoTratamento = expressaoTratamento;
+	}
 
-    /**
-     * Gets the expressaoTratamento value for this Cargo.
-     * 
-     * @return expressaoTratamento
-     */
-    public java.lang.String getExpressaoTratamento() {
-        return expressaoTratamento;
-    }
+	public String getExpressaoVocativo() {
+		return expressaoVocativo;
+	}
 
+	public void setExpressaoVocativo(String expressaoVocativo) {
+		this.expressaoVocativo = expressaoVocativo;
+	}
 
-    /**
-     * Sets the expressaoTratamento value for this Cargo.
-     * 
-     * @param expressaoTratamento
-     */
-    public void setExpressaoTratamento(java.lang.String expressaoTratamento) {
-        this.expressaoTratamento = expressaoTratamento;
-    }
+	private Object __equalsCalc = null;
 
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Cargo))
+			return false;
+		Cargo other = (Cargo) obj;
+		if (this == obj)
+			return true;
+		if (__equalsCalc != null) {
+			return (__equalsCalc == obj);
+		}
+		__equalsCalc = obj;
+		boolean _equals;
+		_equals = true
+				&& ((this.idCargo == null && other.getIdCargo() == null)
+						|| (this.idCargo != null && this.idCargo.equals(other.getIdCargo())))
+				&& ((this.expressaoCargo == null && other.getExpressaoCargo() == null)
+						|| (this.expressaoCargo != null && this.expressaoCargo.equals(other.getExpressaoCargo())))
+				&& ((this.expressaoTratamento == null && other.getExpressaoTratamento() == null)
+						|| (this.expressaoTratamento != null
+								&& this.expressaoTratamento.equals(other.getExpressaoTratamento())))
+				&& ((this.expressaoVocativo == null && other.getExpressaoVocativo() == null)
+						|| (this.expressaoVocativo != null
+								&& this.expressaoVocativo.equals(other.getExpressaoVocativo())));
+		__equalsCalc = null;
+		return _equals;
+	}
 
-    /**
-     * Gets the expressaoVocativo value for this Cargo.
-     * 
-     * @return expressaoVocativo
-     */
-    public java.lang.String getExpressaoVocativo() {
-        return expressaoVocativo;
-    }
+	private boolean __hashCodeCalc = false;
 
-
-    /**
-     * Sets the expressaoVocativo value for this Cargo.
-     * 
-     * @param expressaoVocativo
-     */
-    public void setExpressaoVocativo(java.lang.String expressaoVocativo) {
-        this.expressaoVocativo = expressaoVocativo;
-    }
-
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof Cargo)) return false;
-        Cargo other = (Cargo) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.idCargo==null && other.getIdCargo()==null) || 
-             (this.idCargo!=null &&
-              this.idCargo.equals(other.getIdCargo()))) &&
-            ((this.expressaoCargo==null && other.getExpressaoCargo()==null) || 
-             (this.expressaoCargo!=null &&
-              this.expressaoCargo.equals(other.getExpressaoCargo()))) &&
-            ((this.expressaoTratamento==null && other.getExpressaoTratamento()==null) || 
-             (this.expressaoTratamento!=null &&
-              this.expressaoTratamento.equals(other.getExpressaoTratamento()))) &&
-            ((this.expressaoVocativo==null && other.getExpressaoVocativo()==null) || 
-             (this.expressaoVocativo!=null &&
-              this.expressaoVocativo.equals(other.getExpressaoVocativo())));
-        __equalsCalc = null;
-        return _equals;
-    }
-
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getIdCargo() != null) {
-            _hashCode += getIdCargo().hashCode();
-        }
-        if (getExpressaoCargo() != null) {
-            _hashCode += getExpressaoCargo().hashCode();
-        }
-        if (getExpressaoTratamento() != null) {
-            _hashCode += getExpressaoTratamento().hashCode();
-        }
-        if (getExpressaoVocativo() != null) {
-            _hashCode += getExpressaoVocativo().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
-
+	public int hashCode() {
+		if (__hashCodeCalc) {
+			return 0;
+		}
+		__hashCodeCalc = true;
+		int _hashCode = 1;
+		if (getIdCargo() != null) {
+			_hashCode += getIdCargo().hashCode();
+		}
+		if (getExpressaoCargo() != null) {
+			_hashCode += getExpressaoCargo().hashCode();
+		}
+		if (getExpressaoTratamento() != null) {
+			_hashCode += getExpressaoTratamento().hashCode();
+		}
+		if (getExpressaoVocativo() != null) {
+			_hashCode += getExpressaoVocativo().hashCode();
+		}
+		__hashCodeCalc = false;
+		return _hashCode;
+	}
 }

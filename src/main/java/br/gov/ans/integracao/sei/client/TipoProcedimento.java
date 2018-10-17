@@ -7,101 +7,82 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class TipoProcedimento  implements java.io.Serializable {
-    private java.lang.String idTipoProcedimento;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private java.lang.String nome;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class TipoProcedimento implements Serializable {
 
-    public TipoProcedimento() {
-    }
+	private static final long serialVersionUID = 1L;
 
-    public TipoProcedimento(
-           java.lang.String idTipoProcedimento,
-           java.lang.String nome) {
-           this.idTipoProcedimento = idTipoProcedimento;
-           this.nome = nome;
-    }
+	private String idTipoProcedimento;
 
+	private String nome;
 
-    /**
-     * Gets the idTipoProcedimento value for this TipoProcedimento.
-     * 
-     * @return idTipoProcedimento
-     */
-    public java.lang.String getIdTipoProcedimento() {
-        return idTipoProcedimento;
-    }
+	public TipoProcedimento() {
+	}
 
+	public TipoProcedimento(String idTipoProcedimento, String nome) {
+		this.idTipoProcedimento = idTipoProcedimento;
+		this.nome = nome;
+	}
 
-    /**
-     * Sets the idTipoProcedimento value for this TipoProcedimento.
-     * 
-     * @param idTipoProcedimento
-     */
-    public void setIdTipoProcedimento(java.lang.String idTipoProcedimento) {
-        this.idTipoProcedimento = idTipoProcedimento;
-    }
+	public String getIdTipoProcedimento() {
+		return idTipoProcedimento;
+	}
 
+	public void setIdTipoProcedimento(String idTipoProcedimento) {
+		this.idTipoProcedimento = idTipoProcedimento;
+	}
 
-    /**
-     * Gets the nome value for this TipoProcedimento.
-     * 
-     * @return nome
-     */
-    public java.lang.String getNome() {
-        return nome;
-    }
+	public String getNome() {
+		return nome;
+	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    /**
-     * Sets the nome value for this TipoProcedimento.
-     * 
-     * @param nome
-     */
-    public void setNome(java.lang.String nome) {
-        this.nome = nome;
-    }
+	private Object __equalsCalc = null;
 
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof TipoProcedimento)) return false;
-        TipoProcedimento other = (TipoProcedimento) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.idTipoProcedimento==null && other.getIdTipoProcedimento()==null) || 
-             (this.idTipoProcedimento!=null &&
-              this.idTipoProcedimento.equals(other.getIdTipoProcedimento()))) &&
-            ((this.nome==null && other.getNome()==null) || 
-             (this.nome!=null &&
-              this.nome.equals(other.getNome())));
-        __equalsCalc = null;
-        return _equals;
-    }
+	public boolean equals(Object obj) {
+		if (!(obj instanceof TipoProcedimento))
+			return false;
+		TipoProcedimento other = (TipoProcedimento) obj;
+		if (this == obj)
+			return true;
+		if (__equalsCalc != null) {
+			return (__equalsCalc == obj);
+		}
+		__equalsCalc = obj;
+		boolean _equals;
+		_equals = true && ((this.idTipoProcedimento == null && other.getIdTipoProcedimento() == null)
+				|| (this.idTipoProcedimento != null && this.idTipoProcedimento.equals(other.getIdTipoProcedimento())))
+				&& ((this.nome == null && other.getNome() == null)
+						|| (this.nome != null && this.nome.equals(other.getNome())));
+		__equalsCalc = null;
+		return _equals;
+	}
 
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getIdTipoProcedimento() != null) {
-            _hashCode += getIdTipoProcedimento().hashCode();
-        }
-        if (getNome() != null) {
-            _hashCode += getNome().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
+	private boolean __hashCodeCalc = false;
 
+	public int hashCode() {
+		if (__hashCodeCalc) {
+			return 0;
+		}
+		__hashCodeCalc = true;
+		int _hashCode = 1;
+		if (getIdTipoProcedimento() != null) {
+			_hashCode += getIdTipoProcedimento().hashCode();
+		}
+		if (getNome() != null) {
+			_hashCode += getNome().hashCode();
+		}
+		__hashCodeCalc = false;
+		return _hashCode;
+	}
 }

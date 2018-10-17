@@ -7,131 +7,89 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class Usuario  implements java.io.Serializable {
-    private java.lang.String idUsuario;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private java.lang.String sigla;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Usuario implements Serializable {
 
-    private java.lang.String nome;
+	private static final long serialVersionUID = 1L;
 
-    public Usuario() {
-    }
+	private String idUsuario;
 
-    public Usuario(
-           java.lang.String idUsuario,
-           java.lang.String sigla,
-           java.lang.String nome) {
-           this.idUsuario = idUsuario;
-           this.sigla = sigla;
-           this.nome = nome;
-    }
+	private String sigla;
 
+	private String nome;
 
-    /**
-     * Gets the idUsuario value for this Usuario.
-     * 
-     * @return idUsuario
-     */
-    public java.lang.String getIdUsuario() {
-        return idUsuario;
-    }
+	public Usuario() {
+	}
 
+	public Usuario(String idUsuario, String sigla, String nome) {
+		this.idUsuario = idUsuario;
+		this.sigla = sigla;
+		this.nome = nome;
+	}
 
-    /**
-     * Sets the idUsuario value for this Usuario.
-     * 
-     * @param idUsuario
-     */
-    public void setIdUsuario(java.lang.String idUsuario) {
-        this.idUsuario = idUsuario;
-    }
+	public String getIdUsuario() {
+		return idUsuario;
+	}
 
+	public void setIdUsuario(String idUsuario) {
+		this.idUsuario = idUsuario;
+	}
 
-    /**
-     * Gets the sigla value for this Usuario.
-     * 
-     * @return sigla
-     */
-    public java.lang.String getSigla() {
-        return sigla;
-    }
+	public String getSigla() {
+		return sigla;
+	}
 
+	public void setSigla(String sigla) {
+		this.sigla = sigla;
+	}
 
-    /**
-     * Sets the sigla value for this Usuario.
-     * 
-     * @param sigla
-     */
-    public void setSigla(java.lang.String sigla) {
-        this.sigla = sigla;
-    }
+	public String getNome() {
+		return nome;
+	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    /**
-     * Gets the nome value for this Usuario.
-     * 
-     * @return nome
-     */
-    public java.lang.String getNome() {
-        return nome;
-    }
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Usuario)) {
+			return false;
+		}
 
+		Usuario other = (Usuario) obj;
 
-    /**
-     * Sets the nome value for this Usuario.
-     * 
-     * @param nome
-     */
-    public void setNome(java.lang.String nome) {
-        this.nome = nome;
-    }
+		if (this.getSigla().equals(other.getSigla())) {
+			return true;
+		}
 
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof Usuario)) return false;
-        Usuario other = (Usuario) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.idUsuario==null && other.getIdUsuario()==null) || 
-             (this.idUsuario!=null &&
-              this.idUsuario.equals(other.getIdUsuario()))) &&
-            ((this.sigla==null && other.getSigla()==null) || 
-             (this.sigla!=null &&
-              this.sigla.equals(other.getSigla()))) &&
-            ((this.nome==null && other.getNome()==null) || 
-             (this.nome!=null &&
-              this.nome.equals(other.getNome())));
-        __equalsCalc = null;
-        return _equals;
-    }
+		return false;
+	}
 
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getIdUsuario() != null) {
-            _hashCode += getIdUsuario().hashCode();
-        }
-        if (getSigla() != null) {
-            _hashCode += getSigla().hashCode();
-        }
-        if (getNome() != null) {
-            _hashCode += getNome().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
+	private boolean __hashCodeCalc = false;
 
+	public int hashCode() {
+		if (__hashCodeCalc) {
+			return 0;
+		}
+		__hashCodeCalc = true;
+		int _hashCode = 1;
+		if (getIdUsuario() != null) {
+			_hashCode += getIdUsuario().hashCode();
+		}
+		if (getSigla() != null) {
+			_hashCode += getSigla().hashCode();
+		}
+		if (getNome() != null) {
+			_hashCode += getNome().hashCode();
+		}
+		__hashCodeCalc = false;
+		return _hashCode;
+	}
 }

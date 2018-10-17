@@ -7,101 +7,82 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class TipoConferencia  implements java.io.Serializable {
-    private java.lang.String idTipoConferencia;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private java.lang.String descricao;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class TipoConferencia implements Serializable {
 
-    public TipoConferencia() {
-    }
+	private static final long serialVersionUID = 1L;
 
-    public TipoConferencia(
-           java.lang.String idTipoConferencia,
-           java.lang.String descricao) {
-           this.idTipoConferencia = idTipoConferencia;
-           this.descricao = descricao;
-    }
+	private String idTipoConferencia;
 
+	private String descricao;
 
-    /**
-     * Gets the idTipoConferencia value for this TipoConferencia.
-     * 
-     * @return idTipoConferencia
-     */
-    public java.lang.String getIdTipoConferencia() {
-        return idTipoConferencia;
-    }
+	public TipoConferencia() {
+	}
 
+	public TipoConferencia(String idTipoConferencia, String descricao) {
+		this.idTipoConferencia = idTipoConferencia;
+		this.descricao = descricao;
+	}
 
-    /**
-     * Sets the idTipoConferencia value for this TipoConferencia.
-     * 
-     * @param idTipoConferencia
-     */
-    public void setIdTipoConferencia(java.lang.String idTipoConferencia) {
-        this.idTipoConferencia = idTipoConferencia;
-    }
+	public String getIdTipoConferencia() {
+		return idTipoConferencia;
+	}
 
+	public void setIdTipoConferencia(String idTipoConferencia) {
+		this.idTipoConferencia = idTipoConferencia;
+	}
 
-    /**
-     * Gets the descricao value for this TipoConferencia.
-     * 
-     * @return descricao
-     */
-    public java.lang.String getDescricao() {
-        return descricao;
-    }
+	public String getDescricao() {
+		return descricao;
+	}
 
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
-    /**
-     * Sets the descricao value for this TipoConferencia.
-     * 
-     * @param descricao
-     */
-    public void setDescricao(java.lang.String descricao) {
-        this.descricao = descricao;
-    }
+	private Object __equalsCalc = null;
 
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof TipoConferencia)) return false;
-        TipoConferencia other = (TipoConferencia) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.idTipoConferencia==null && other.getIdTipoConferencia()==null) || 
-             (this.idTipoConferencia!=null &&
-              this.idTipoConferencia.equals(other.getIdTipoConferencia()))) &&
-            ((this.descricao==null && other.getDescricao()==null) || 
-             (this.descricao!=null &&
-              this.descricao.equals(other.getDescricao())));
-        __equalsCalc = null;
-        return _equals;
-    }
+	public boolean equals(Object obj) {
+		if (!(obj instanceof TipoConferencia))
+			return false;
+		TipoConferencia other = (TipoConferencia) obj;
+		if (this == obj)
+			return true;
+		if (__equalsCalc != null) {
+			return (__equalsCalc == obj);
+		}
+		__equalsCalc = obj;
+		boolean _equals;
+		_equals = true && ((this.idTipoConferencia == null && other.getIdTipoConferencia() == null)
+				|| (this.idTipoConferencia != null && this.idTipoConferencia.equals(other.getIdTipoConferencia())))
+				&& ((this.descricao == null && other.getDescricao() == null)
+						|| (this.descricao != null && this.descricao.equals(other.getDescricao())));
+		__equalsCalc = null;
+		return _equals;
+	}
 
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getIdTipoConferencia() != null) {
-            _hashCode += getIdTipoConferencia().hashCode();
-        }
-        if (getDescricao() != null) {
-            _hashCode += getDescricao().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
+	private boolean __hashCodeCalc = false;
 
+	public int hashCode() {
+		if (__hashCodeCalc) {
+			return 0;
+		}
+		__hashCodeCalc = true;
+		int _hashCode = 1;
+		if (getIdTipoConferencia() != null) {
+			_hashCode += getIdTipoConferencia().hashCode();
+		}
+		if (getDescricao() != null) {
+			_hashCode += getDescricao().hashCode();
+		}
+		__hashCodeCalc = false;
+		return _hashCode;
+	}
 }

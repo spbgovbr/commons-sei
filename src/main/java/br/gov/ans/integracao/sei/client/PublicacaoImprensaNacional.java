@@ -7,191 +7,131 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class PublicacaoImprensaNacional  implements java.io.Serializable {
-    private java.lang.String siglaVeiculo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private java.lang.String descricaoVeiculo;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class PublicacaoImprensaNacional implements Serializable {
 
-    private java.lang.String pagina;
+	private static final long serialVersionUID = 1L;
 
-    private java.lang.String secao;
+	private String siglaVeiculo;
 
-    private java.lang.String data;
+	private String descricaoVeiculo;
 
-    public PublicacaoImprensaNacional() {
-    }
+	private String pagina;
 
-    public PublicacaoImprensaNacional(
-           java.lang.String siglaVeiculo,
-           java.lang.String descricaoVeiculo,
-           java.lang.String pagina,
-           java.lang.String secao,
-           java.lang.String data) {
-           this.siglaVeiculo = siglaVeiculo;
-           this.descricaoVeiculo = descricaoVeiculo;
-           this.pagina = pagina;
-           this.secao = secao;
-           this.data = data;
-    }
+	private String secao;
 
+	private String data;
 
-    /**
-     * Gets the siglaVeiculo value for this PublicacaoImprensaNacional.
-     * 
-     * @return siglaVeiculo
-     */
-    public java.lang.String getSiglaVeiculo() {
-        return siglaVeiculo;
-    }
+	public PublicacaoImprensaNacional() {
+	}
 
+	public PublicacaoImprensaNacional(String siglaVeiculo, String descricaoVeiculo, String pagina, String secao, String data) {
+		this.siglaVeiculo = siglaVeiculo;
+		this.descricaoVeiculo = descricaoVeiculo;
+		this.pagina = pagina;
+		this.secao = secao;
+		this.data = data;
+	}
 
-    /**
-     * Sets the siglaVeiculo value for this PublicacaoImprensaNacional.
-     * 
-     * @param siglaVeiculo
-     */
-    public void setSiglaVeiculo(java.lang.String siglaVeiculo) {
-        this.siglaVeiculo = siglaVeiculo;
-    }
+	public String getSiglaVeiculo() {
+		return siglaVeiculo;
+	}
 
+	public void setSiglaVeiculo(String siglaVeiculo) {
+		this.siglaVeiculo = siglaVeiculo;
+	}
 
-    /**
-     * Gets the descricaoVeiculo value for this PublicacaoImprensaNacional.
-     * 
-     * @return descricaoVeiculo
-     */
-    public java.lang.String getDescricaoVeiculo() {
-        return descricaoVeiculo;
-    }
+	public String getDescricaoVeiculo() {
+		return descricaoVeiculo;
+	}
 
+	public void setDescricaoVeiculo(String descricaoVeiculo) {
+		this.descricaoVeiculo = descricaoVeiculo;
+	}
 
-    /**
-     * Sets the descricaoVeiculo value for this PublicacaoImprensaNacional.
-     * 
-     * @param descricaoVeiculo
-     */
-    public void setDescricaoVeiculo(java.lang.String descricaoVeiculo) {
-        this.descricaoVeiculo = descricaoVeiculo;
-    }
+	public String getPagina() {
+		return pagina;
+	}
 
+	public void setPagina(String pagina) {
+		this.pagina = pagina;
+	}
 
-    /**
-     * Gets the pagina value for this PublicacaoImprensaNacional.
-     * 
-     * @return pagina
-     */
-    public java.lang.String getPagina() {
-        return pagina;
-    }
+	public String getSecao() {
+		return secao;
+	}
 
+	public void setSecao(String secao) {
+		this.secao = secao;
+	}
 
-    /**
-     * Sets the pagina value for this PublicacaoImprensaNacional.
-     * 
-     * @param pagina
-     */
-    public void setPagina(java.lang.String pagina) {
-        this.pagina = pagina;
-    }
+	public String getData() {
+		return data;
+	}
 
+	public void setData(String data) {
+		this.data = data;
+	}
 
-    /**
-     * Gets the secao value for this PublicacaoImprensaNacional.
-     * 
-     * @return secao
-     */
-    public java.lang.String getSecao() {
-        return secao;
-    }
+	private Object __equalsCalc = null;
 
+	public boolean equals(Object obj) {
+		if (!(obj instanceof PublicacaoImprensaNacional))
+			return false;
+		PublicacaoImprensaNacional other = (PublicacaoImprensaNacional) obj;
+		if (this == obj)
+			return true;
+		if (__equalsCalc != null) {
+			return (__equalsCalc == obj);
+		}
+		__equalsCalc = obj;
+		boolean _equals;
+		_equals = true
+				&& ((this.siglaVeiculo == null && other.getSiglaVeiculo() == null)
+						|| (this.siglaVeiculo != null && this.siglaVeiculo.equals(other.getSiglaVeiculo())))
+				&& ((this.descricaoVeiculo == null && other.getDescricaoVeiculo() == null)
+						|| (this.descricaoVeiculo != null && this.descricaoVeiculo.equals(other.getDescricaoVeiculo())))
+				&& ((this.pagina == null && other.getPagina() == null)
+						|| (this.pagina != null && this.pagina.equals(other.getPagina())))
+				&& ((this.secao == null && other.getSecao() == null)
+						|| (this.secao != null && this.secao.equals(other.getSecao())))
+				&& ((this.data == null && other.getData() == null)
+						|| (this.data != null && this.data.equals(other.getData())));
+		__equalsCalc = null;
+		return _equals;
+	}
 
-    /**
-     * Sets the secao value for this PublicacaoImprensaNacional.
-     * 
-     * @param secao
-     */
-    public void setSecao(java.lang.String secao) {
-        this.secao = secao;
-    }
+	private boolean __hashCodeCalc = false;
 
-
-    /**
-     * Gets the data value for this PublicacaoImprensaNacional.
-     * 
-     * @return data
-     */
-    public java.lang.String getData() {
-        return data;
-    }
-
-
-    /**
-     * Sets the data value for this PublicacaoImprensaNacional.
-     * 
-     * @param data
-     */
-    public void setData(java.lang.String data) {
-        this.data = data;
-    }
-
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof PublicacaoImprensaNacional)) return false;
-        PublicacaoImprensaNacional other = (PublicacaoImprensaNacional) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.siglaVeiculo==null && other.getSiglaVeiculo()==null) || 
-             (this.siglaVeiculo!=null &&
-              this.siglaVeiculo.equals(other.getSiglaVeiculo()))) &&
-            ((this.descricaoVeiculo==null && other.getDescricaoVeiculo()==null) || 
-             (this.descricaoVeiculo!=null &&
-              this.descricaoVeiculo.equals(other.getDescricaoVeiculo()))) &&
-            ((this.pagina==null && other.getPagina()==null) || 
-             (this.pagina!=null &&
-              this.pagina.equals(other.getPagina()))) &&
-            ((this.secao==null && other.getSecao()==null) || 
-             (this.secao!=null &&
-              this.secao.equals(other.getSecao()))) &&
-            ((this.data==null && other.getData()==null) || 
-             (this.data!=null &&
-              this.data.equals(other.getData())));
-        __equalsCalc = null;
-        return _equals;
-    }
-
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getSiglaVeiculo() != null) {
-            _hashCode += getSiglaVeiculo().hashCode();
-        }
-        if (getDescricaoVeiculo() != null) {
-            _hashCode += getDescricaoVeiculo().hashCode();
-        }
-        if (getPagina() != null) {
-            _hashCode += getPagina().hashCode();
-        }
-        if (getSecao() != null) {
-            _hashCode += getSecao().hashCode();
-        }
-        if (getData() != null) {
-            _hashCode += getData().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
-
+	public int hashCode() {
+		if (__hashCodeCalc) {
+			return 0;
+		}
+		__hashCodeCalc = true;
+		int _hashCode = 1;
+		if (getSiglaVeiculo() != null) {
+			_hashCode += getSiglaVeiculo().hashCode();
+		}
+		if (getDescricaoVeiculo() != null) {
+			_hashCode += getDescricaoVeiculo().hashCode();
+		}
+		if (getPagina() != null) {
+			_hashCode += getPagina().hashCode();
+		}
+		if (getSecao() != null) {
+			_hashCode += getSecao().hashCode();
+		}
+		if (getData() != null) {
+			_hashCode += getData().hashCode();
+		}
+		__hashCodeCalc = false;
+		return _hashCode;
+	}
 }

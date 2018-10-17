@@ -7,101 +7,82 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class Assunto  implements java.io.Serializable {
-    private java.lang.String codigoEstruturado;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private java.lang.String descricao;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Assunto implements Serializable {
 
-    public Assunto() {
-    }
+	private static final long serialVersionUID = 1L;
 
-    public Assunto(
-           java.lang.String codigoEstruturado,
-           java.lang.String descricao) {
-           this.codigoEstruturado = codigoEstruturado;
-           this.descricao = descricao;
-    }
+	private String codigoEstruturado;
 
+	private String descricao;
 
-    /**
-     * Gets the codigoEstruturado value for this Assunto.
-     * 
-     * @return codigoEstruturado
-     */
-    public java.lang.String getCodigoEstruturado() {
-        return codigoEstruturado;
-    }
+	public Assunto() {
+	}
 
+	public Assunto(String codigoEstruturado, String descricao) {
+		this.codigoEstruturado = codigoEstruturado;
+		this.descricao = descricao;
+	}
 
-    /**
-     * Sets the codigoEstruturado value for this Assunto.
-     * 
-     * @param codigoEstruturado
-     */
-    public void setCodigoEstruturado(java.lang.String codigoEstruturado) {
-        this.codigoEstruturado = codigoEstruturado;
-    }
+	public String getCodigoEstruturado() {
+		return codigoEstruturado;
+	}
 
+	public void setCodigoEstruturado(String codigoEstruturado) {
+		this.codigoEstruturado = codigoEstruturado;
+	}
 
-    /**
-     * Gets the descricao value for this Assunto.
-     * 
-     * @return descricao
-     */
-    public java.lang.String getDescricao() {
-        return descricao;
-    }
+	public String getDescricao() {
+		return descricao;
+	}
 
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
-    /**
-     * Sets the descricao value for this Assunto.
-     * 
-     * @param descricao
-     */
-    public void setDescricao(java.lang.String descricao) {
-        this.descricao = descricao;
-    }
+	private Object __equalsCalc = null;
 
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof Assunto)) return false;
-        Assunto other = (Assunto) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.codigoEstruturado==null && other.getCodigoEstruturado()==null) || 
-             (this.codigoEstruturado!=null &&
-              this.codigoEstruturado.equals(other.getCodigoEstruturado()))) &&
-            ((this.descricao==null && other.getDescricao()==null) || 
-             (this.descricao!=null &&
-              this.descricao.equals(other.getDescricao())));
-        __equalsCalc = null;
-        return _equals;
-    }
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Assunto))
+			return false;
+		Assunto other = (Assunto) obj;
+		if (this == obj)
+			return true;
+		if (__equalsCalc != null) {
+			return (__equalsCalc == obj);
+		}
+		__equalsCalc = obj;
+		boolean _equals;
+		_equals = true && ((this.codigoEstruturado == null && other.getCodigoEstruturado() == null)
+				|| (this.codigoEstruturado != null && this.codigoEstruturado.equals(other.getCodigoEstruturado())))
+				&& ((this.descricao == null && other.getDescricao() == null)
+						|| (this.descricao != null && this.descricao.equals(other.getDescricao())));
+		__equalsCalc = null;
+		return _equals;
+	}
 
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getCodigoEstruturado() != null) {
-            _hashCode += getCodigoEstruturado().hashCode();
-        }
-        if (getDescricao() != null) {
-            _hashCode += getDescricao().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
+	private boolean __hashCodeCalc = false;
 
+	public int hashCode() {
+		if (__hashCodeCalc) {
+			return 0;
+		}
+		__hashCodeCalc = true;
+		int _hashCode = 1;
+		if (getCodigoEstruturado() != null) {
+			_hashCode += getCodigoEstruturado().hashCode();
+		}
+		if (getDescricao() != null) {
+			_hashCode += getDescricao().hashCode();
+		}
+		__hashCodeCalc = false;
+		return _hashCode;
+	}
 }

@@ -7,131 +7,99 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class Serie  implements java.io.Serializable {
-    private java.lang.String idSerie;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private java.lang.String nome;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Serie implements Serializable {
 
-    private java.lang.String aplicabilidade;
+	private static final long serialVersionUID = 1L;
 
-    public Serie() {
-    }
+	private String idSerie;
 
-    public Serie(
-           java.lang.String idSerie,
-           java.lang.String nome,
-           java.lang.String aplicabilidade) {
-           this.idSerie = idSerie;
-           this.nome = nome;
-           this.aplicabilidade = aplicabilidade;
-    }
+	private String nome;
 
+	private String aplicabilidade;
 
-    /**
-     * Gets the idSerie value for this Serie.
-     * 
-     * @return idSerie
-     */
-    public java.lang.String getIdSerie() {
-        return idSerie;
-    }
+	public Serie() {
+	}
 
+	public Serie(String idSerie, String nome, String aplicabilidade) {
+		this.idSerie = idSerie;
+		this.nome = nome;
+		this.aplicabilidade = aplicabilidade;
+	}
 
-    /**
-     * Sets the idSerie value for this Serie.
-     * 
-     * @param idSerie
-     */
-    public void setIdSerie(java.lang.String idSerie) {
-        this.idSerie = idSerie;
-    }
+	public String getIdSerie() {
+		return idSerie;
+	}
 
+	public void setIdSerie(String idSerie) {
+		this.idSerie = idSerie;
+	}
 
-    /**
-     * Gets the nome value for this Serie.
-     * 
-     * @return nome
-     */
-    public java.lang.String getNome() {
-        return nome;
-    }
+	public String getNome() {
+		return nome;
+	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    /**
-     * Sets the nome value for this Serie.
-     * 
-     * @param nome
-     */
-    public void setNome(java.lang.String nome) {
-        this.nome = nome;
-    }
+	public String getAplicabilidade() {
+		return aplicabilidade;
+	}
 
+	public void setAplicabilidade(String aplicabilidade) {
+		this.aplicabilidade = aplicabilidade;
+	}
 
-    /**
-     * Gets the aplicabilidade value for this Serie.
-     * 
-     * @return aplicabilidade
-     */
-    public java.lang.String getAplicabilidade() {
-        return aplicabilidade;
-    }
+	private Object __equalsCalc = null;
 
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Serie))
+			return false;
+		Serie other = (Serie) obj;
+		if (this == obj)
+			return true;
+		if (__equalsCalc != null) {
+			return (__equalsCalc == obj);
+		}
+		__equalsCalc = obj;
+		boolean _equals;
+		_equals = true
+				&& ((this.idSerie == null && other.getIdSerie() == null)
+						|| (this.idSerie != null && this.idSerie.equals(other.getIdSerie())))
+				&& ((this.nome == null && other.getNome() == null)
+						|| (this.nome != null && this.nome.equals(other.getNome())))
+				&& ((this.aplicabilidade == null && other.getAplicabilidade() == null)
+						|| (this.aplicabilidade != null && this.aplicabilidade.equals(other.getAplicabilidade())));
+		__equalsCalc = null;
+		return _equals;
+	}
 
-    /**
-     * Sets the aplicabilidade value for this Serie.
-     * 
-     * @param aplicabilidade
-     */
-    public void setAplicabilidade(java.lang.String aplicabilidade) {
-        this.aplicabilidade = aplicabilidade;
-    }
+	private boolean __hashCodeCalc = false;
 
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof Serie)) return false;
-        Serie other = (Serie) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.idSerie==null && other.getIdSerie()==null) || 
-             (this.idSerie!=null &&
-              this.idSerie.equals(other.getIdSerie()))) &&
-            ((this.nome==null && other.getNome()==null) || 
-             (this.nome!=null &&
-              this.nome.equals(other.getNome()))) &&
-            ((this.aplicabilidade==null && other.getAplicabilidade()==null) || 
-             (this.aplicabilidade!=null &&
-              this.aplicabilidade.equals(other.getAplicabilidade())));
-        __equalsCalc = null;
-        return _equals;
-    }
-
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getIdSerie() != null) {
-            _hashCode += getIdSerie().hashCode();
-        }
-        if (getNome() != null) {
-            _hashCode += getNome().hashCode();
-        }
-        if (getAplicabilidade() != null) {
-            _hashCode += getAplicabilidade().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
-
+	public int hashCode() {
+		if (__hashCodeCalc) {
+			return 0;
+		}
+		__hashCodeCalc = true;
+		int _hashCode = 1;
+		if (getIdSerie() != null) {
+			_hashCode += getIdSerie().hashCode();
+		}
+		if (getNome() != null) {
+			_hashCode += getNome().hashCode();
+		}
+		if (getAplicabilidade() != null) {
+			_hashCode += getAplicabilidade().hashCode();
+		}
+		__hashCodeCalc = false;
+		return _hashCode;
+	}
 }

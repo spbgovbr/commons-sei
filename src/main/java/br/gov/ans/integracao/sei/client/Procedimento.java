@@ -7,327 +7,204 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class Procedimento  implements java.io.Serializable {
-    private java.lang.String idTipoProcedimento;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private java.lang.String numeroProtocolo;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Procedimento implements Serializable {
 
-    private java.lang.String dataAutuacao;
+	private static final long serialVersionUID = 1L;
 
-    private java.lang.String especificacao;
+	private String idTipoProcedimento;
 
-    private br.gov.ans.integracao.sei.client.Assunto[] assuntos;
+	private String numeroProtocolo;
 
-    private br.gov.ans.integracao.sei.client.Interessado[] interessados;
+	private String dataAutuacao;
 
-    private java.lang.String observacao;
+	private String especificacao;
 
-    private java.lang.String nivelAcesso;
+	private Assunto[] assuntos;
 
-    private java.lang.String idHipoteseLegal;
+	private Interessado[] interessados;
 
-    public Procedimento() {
-    }
+	private String observacao;
 
-    public Procedimento(
-           java.lang.String idTipoProcedimento,
-           java.lang.String numeroProtocolo,
-           java.lang.String dataAutuacao,
-           java.lang.String especificacao,
-           br.gov.ans.integracao.sei.client.Assunto[] assuntos,
-           br.gov.ans.integracao.sei.client.Interessado[] interessados,
-           java.lang.String observacao,
-           java.lang.String nivelAcesso,
-           java.lang.String idHipoteseLegal) {
-           this.idTipoProcedimento = idTipoProcedimento;
-           this.numeroProtocolo = numeroProtocolo;
-           this.dataAutuacao = dataAutuacao;
-           this.especificacao = especificacao;
-           this.assuntos = assuntos;
-           this.interessados = interessados;
-           this.observacao = observacao;
-           this.nivelAcesso = nivelAcesso;
-           this.idHipoteseLegal = idHipoteseLegal;
-    }
+	private String nivelAcesso;
 
+	private String idHipoteseLegal;
 
-    /**
-     * Gets the idTipoProcedimento value for this Procedimento.
-     * 
-     * @return idTipoProcedimento
-     */
-    public java.lang.String getIdTipoProcedimento() {
-        return idTipoProcedimento;
-    }
+	public Procedimento() {
+	}
 
+	public Procedimento(String idTipoProcedimento, String numeroProtocolo, String dataAutuacao, String especificacao, Assunto[] assuntos, Interessado[] interessados, String observacao, String nivelAcesso, String idHipoteseLegal) {
+		this.idTipoProcedimento = idTipoProcedimento;
+		this.numeroProtocolo = numeroProtocolo;
+		this.dataAutuacao = dataAutuacao;
+		this.especificacao = especificacao;
+		this.assuntos = assuntos;
+		this.interessados = interessados;
+		this.observacao = observacao;
+		this.nivelAcesso = nivelAcesso;
+		this.idHipoteseLegal = idHipoteseLegal;
+	}
 
-    /**
-     * Sets the idTipoProcedimento value for this Procedimento.
-     * 
-     * @param idTipoProcedimento
-     */
-    public void setIdTipoProcedimento(java.lang.String idTipoProcedimento) {
-        this.idTipoProcedimento = idTipoProcedimento;
-    }
+	public String getIdTipoProcedimento() {
+		return idTipoProcedimento;
+	}
 
+	public void setIdTipoProcedimento(String idTipoProcedimento) {
+		this.idTipoProcedimento = idTipoProcedimento;
+	}
 
-    /**
-     * Gets the numeroProtocolo value for this Procedimento.
-     * 
-     * @return numeroProtocolo
-     */
-    public java.lang.String getNumeroProtocolo() {
-        return numeroProtocolo;
-    }
+	public String getNumeroProtocolo() {
+		return numeroProtocolo;
+	}
 
+	public void setNumeroProtocolo(String numeroProtocolo) {
+		this.numeroProtocolo = numeroProtocolo;
+	}
 
-    /**
-     * Sets the numeroProtocolo value for this Procedimento.
-     * 
-     * @param numeroProtocolo
-     */
-    public void setNumeroProtocolo(java.lang.String numeroProtocolo) {
-        this.numeroProtocolo = numeroProtocolo;
-    }
+	public String getDataAutuacao() {
+		return dataAutuacao;
+	}
 
+	public void setDataAutuacao(String dataAutuacao) {
+		this.dataAutuacao = dataAutuacao;
+	}
 
-    /**
-     * Gets the dataAutuacao value for this Procedimento.
-     * 
-     * @return dataAutuacao
-     */
-    public java.lang.String getDataAutuacao() {
-        return dataAutuacao;
-    }
+	public String getEspecificacao() {
+		return especificacao;
+	}
 
+	public void setEspecificacao(String especificacao) {
+		this.especificacao = especificacao;
+	}
 
-    /**
-     * Sets the dataAutuacao value for this Procedimento.
-     * 
-     * @param dataAutuacao
-     */
-    public void setDataAutuacao(java.lang.String dataAutuacao) {
-        this.dataAutuacao = dataAutuacao;
-    }
+	public Assunto[] getAssuntos() {
+		return assuntos;
+	}
 
+	public void setAssuntos(Assunto[] assuntos) {
+		this.assuntos = assuntos;
+	}
 
-    /**
-     * Gets the especificacao value for this Procedimento.
-     * 
-     * @return especificacao
-     */
-    public java.lang.String getEspecificacao() {
-        return especificacao;
-    }
+	public Interessado[] getInteressados() {
+		return interessados;
+	}
 
+	public void setInteressados(Interessado[] interessados) {
+		this.interessados = interessados;
+	}
 
-    /**
-     * Sets the especificacao value for this Procedimento.
-     * 
-     * @param especificacao
-     */
-    public void setEspecificacao(java.lang.String especificacao) {
-        this.especificacao = especificacao;
-    }
+	public String getObservacao() {
+		return observacao;
+	}
 
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
+	}
 
-    /**
-     * Gets the assuntos value for this Procedimento.
-     * 
-     * @return assuntos
-     */
-    public br.gov.ans.integracao.sei.client.Assunto[] getAssuntos() {
-        return assuntos;
-    }
+	public String getNivelAcesso() {
+		return nivelAcesso;
+	}
 
+	public void setNivelAcesso(String nivelAcesso) {
+		this.nivelAcesso = nivelAcesso;
+	}
 
-    /**
-     * Sets the assuntos value for this Procedimento.
-     * 
-     * @param assuntos
-     */
-    public void setAssuntos(br.gov.ans.integracao.sei.client.Assunto[] assuntos) {
-        this.assuntos = assuntos;
-    }
+	public String getIdHipoteseLegal() {
+		return idHipoteseLegal;
+	}
 
+	public void setIdHipoteseLegal(String idHipoteseLegal) {
+		this.idHipoteseLegal = idHipoteseLegal;
+	}
 
-    /**
-     * Gets the interessados value for this Procedimento.
-     * 
-     * @return interessados
-     */
-    public br.gov.ans.integracao.sei.client.Interessado[] getInteressados() {
-        return interessados;
-    }
+	private Object __equalsCalc = null;
 
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Procedimento))
+			return false;
+		Procedimento other = (Procedimento) obj;
+		if (this == obj)
+			return true;
+		if (__equalsCalc != null) {
+			return (__equalsCalc == obj);
+		}
+		__equalsCalc = obj;
+		boolean _equals;
+		_equals = true && ((this.idTipoProcedimento == null && other.getIdTipoProcedimento() == null)
+				|| (this.idTipoProcedimento != null && this.idTipoProcedimento.equals(other.getIdTipoProcedimento())))
+				&& ((this.numeroProtocolo == null && other.getNumeroProtocolo() == null)
+						|| (this.numeroProtocolo != null && this.numeroProtocolo.equals(other.getNumeroProtocolo())))
+				&& ((this.dataAutuacao == null && other.getDataAutuacao() == null)
+						|| (this.dataAutuacao != null && this.dataAutuacao.equals(other.getDataAutuacao())))
+				&& ((this.especificacao == null && other.getEspecificacao() == null)
+						|| (this.especificacao != null && this.especificacao.equals(other.getEspecificacao())))
+				&& ((this.assuntos == null && other.getAssuntos() == null)
+						|| (this.assuntos != null && java.util.Arrays.equals(this.assuntos, other.getAssuntos())))
+				&& ((this.interessados == null && other.getInteressados() == null) || (this.interessados != null
+						&& java.util.Arrays.equals(this.interessados, other.getInteressados())))
+				&& ((this.observacao == null && other.getObservacao() == null)
+						|| (this.observacao != null && this.observacao.equals(other.getObservacao())))
+				&& ((this.nivelAcesso == null && other.getNivelAcesso() == null)
+						|| (this.nivelAcesso != null && this.nivelAcesso.equals(other.getNivelAcesso())))
+				&& ((this.idHipoteseLegal == null && other.getIdHipoteseLegal() == null)
+						|| (this.idHipoteseLegal != null && this.idHipoteseLegal.equals(other.getIdHipoteseLegal())));
+		__equalsCalc = null;
+		return _equals;
+	}
 
-    /**
-     * Sets the interessados value for this Procedimento.
-     * 
-     * @param interessados
-     */
-    public void setInteressados(br.gov.ans.integracao.sei.client.Interessado[] interessados) {
-        this.interessados = interessados;
-    }
+	private boolean __hashCodeCalc = false;
 
-
-    /**
-     * Gets the observacao value for this Procedimento.
-     * 
-     * @return observacao
-     */
-    public java.lang.String getObservacao() {
-        return observacao;
-    }
-
-
-    /**
-     * Sets the observacao value for this Procedimento.
-     * 
-     * @param observacao
-     */
-    public void setObservacao(java.lang.String observacao) {
-        this.observacao = observacao;
-    }
-
-
-    /**
-     * Gets the nivelAcesso value for this Procedimento.
-     * 
-     * @return nivelAcesso
-     */
-    public java.lang.String getNivelAcesso() {
-        return nivelAcesso;
-    }
-
-
-    /**
-     * Sets the nivelAcesso value for this Procedimento.
-     * 
-     * @param nivelAcesso
-     */
-    public void setNivelAcesso(java.lang.String nivelAcesso) {
-        this.nivelAcesso = nivelAcesso;
-    }
-
-
-    /**
-     * Gets the idHipoteseLegal value for this Procedimento.
-     * 
-     * @return idHipoteseLegal
-     */
-    public java.lang.String getIdHipoteseLegal() {
-        return idHipoteseLegal;
-    }
-
-
-    /**
-     * Sets the idHipoteseLegal value for this Procedimento.
-     * 
-     * @param idHipoteseLegal
-     */
-    public void setIdHipoteseLegal(java.lang.String idHipoteseLegal) {
-        this.idHipoteseLegal = idHipoteseLegal;
-    }
-
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof Procedimento)) return false;
-        Procedimento other = (Procedimento) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.idTipoProcedimento==null && other.getIdTipoProcedimento()==null) || 
-             (this.idTipoProcedimento!=null &&
-              this.idTipoProcedimento.equals(other.getIdTipoProcedimento()))) &&
-            ((this.numeroProtocolo==null && other.getNumeroProtocolo()==null) || 
-             (this.numeroProtocolo!=null &&
-              this.numeroProtocolo.equals(other.getNumeroProtocolo()))) &&
-            ((this.dataAutuacao==null && other.getDataAutuacao()==null) || 
-             (this.dataAutuacao!=null &&
-              this.dataAutuacao.equals(other.getDataAutuacao()))) &&
-            ((this.especificacao==null && other.getEspecificacao()==null) || 
-             (this.especificacao!=null &&
-              this.especificacao.equals(other.getEspecificacao()))) &&
-            ((this.assuntos==null && other.getAssuntos()==null) || 
-             (this.assuntos!=null &&
-              java.util.Arrays.equals(this.assuntos, other.getAssuntos()))) &&
-            ((this.interessados==null && other.getInteressados()==null) || 
-             (this.interessados!=null &&
-              java.util.Arrays.equals(this.interessados, other.getInteressados()))) &&
-            ((this.observacao==null && other.getObservacao()==null) || 
-             (this.observacao!=null &&
-              this.observacao.equals(other.getObservacao()))) &&
-            ((this.nivelAcesso==null && other.getNivelAcesso()==null) || 
-             (this.nivelAcesso!=null &&
-              this.nivelAcesso.equals(other.getNivelAcesso()))) &&
-            ((this.idHipoteseLegal==null && other.getIdHipoteseLegal()==null) || 
-             (this.idHipoteseLegal!=null &&
-              this.idHipoteseLegal.equals(other.getIdHipoteseLegal())));
-        __equalsCalc = null;
-        return _equals;
-    }
-
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getIdTipoProcedimento() != null) {
-            _hashCode += getIdTipoProcedimento().hashCode();
-        }
-        if (getNumeroProtocolo() != null) {
-            _hashCode += getNumeroProtocolo().hashCode();
-        }
-        if (getDataAutuacao() != null) {
-            _hashCode += getDataAutuacao().hashCode();
-        }
-        if (getEspecificacao() != null) {
-            _hashCode += getEspecificacao().hashCode();
-        }
-        if (getAssuntos() != null) {
-            for (int i=0;
-                 i<java.lang.reflect.Array.getLength(getAssuntos());
-                 i++) {
-                java.lang.Object obj = java.lang.reflect.Array.get(getAssuntos(), i);
-                if (obj != null &&
-                    !obj.getClass().isArray()) {
-                    _hashCode += obj.hashCode();
-                }
-            }
-        }
-        if (getInteressados() != null) {
-            for (int i=0;
-                 i<java.lang.reflect.Array.getLength(getInteressados());
-                 i++) {
-                java.lang.Object obj = java.lang.reflect.Array.get(getInteressados(), i);
-                if (obj != null &&
-                    !obj.getClass().isArray()) {
-                    _hashCode += obj.hashCode();
-                }
-            }
-        }
-        if (getObservacao() != null) {
-            _hashCode += getObservacao().hashCode();
-        }
-        if (getNivelAcesso() != null) {
-            _hashCode += getNivelAcesso().hashCode();
-        }
-        if (getIdHipoteseLegal() != null) {
-            _hashCode += getIdHipoteseLegal().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
-
+	public int hashCode() {
+		if (__hashCodeCalc) {
+			return 0;
+		}
+		__hashCodeCalc = true;
+		int _hashCode = 1;
+		if (getIdTipoProcedimento() != null) {
+			_hashCode += getIdTipoProcedimento().hashCode();
+		}
+		if (getNumeroProtocolo() != null) {
+			_hashCode += getNumeroProtocolo().hashCode();
+		}
+		if (getDataAutuacao() != null) {
+			_hashCode += getDataAutuacao().hashCode();
+		}
+		if (getEspecificacao() != null) {
+			_hashCode += getEspecificacao().hashCode();
+		}
+		if (getAssuntos() != null) {
+			for (int i = 0; i < java.lang.reflect.Array.getLength(getAssuntos()); i++) {
+				java.lang.Object obj = java.lang.reflect.Array.get(getAssuntos(), i);
+				if (obj != null && !obj.getClass().isArray()) {
+					_hashCode += obj.hashCode();
+				}
+			}
+		}
+		if (getInteressados() != null) {
+			for (int i = 0; i < java.lang.reflect.Array.getLength(getInteressados()); i++) {
+				java.lang.Object obj = java.lang.reflect.Array.get(getInteressados(), i);
+				if (obj != null && !obj.getClass().isArray()) {
+					_hashCode += obj.hashCode();
+				}
+			}
+		}
+		if (getObservacao() != null) {
+			_hashCode += getObservacao().hashCode();
+		}
+		if (getNivelAcesso() != null) {
+			_hashCode += getNivelAcesso().hashCode();
+		}
+		if (getIdHipoteseLegal() != null) {
+			_hashCode += getIdHipoteseLegal().hashCode();
+		}
+		__hashCodeCalc = false;
+		return _hashCode;
+	}
 }

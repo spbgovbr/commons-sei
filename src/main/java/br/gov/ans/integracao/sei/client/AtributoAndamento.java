@@ -7,131 +7,104 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class AtributoAndamento  implements java.io.Serializable {
-    private java.lang.String nome;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private java.lang.String valor;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+class AtributoAndamento implements Serializable {
 
-    private java.lang.String idOrigem;
+	static final long serialVersionUID = 1L;
 
-    public AtributoAndamento() {
-    }
+	private String nome;
 
-    public AtributoAndamento(
-           java.lang.String nome,
-           java.lang.String valor,
-           java.lang.String idOrigem) {
-           this.nome = nome;
-           this.valor = valor;
-           this.idOrigem = idOrigem;
-    }
+	private String valor;
 
+	private String idOrigem;
 
-    /**
-     * Gets the nome value for this AtributoAndamento.
-     * 
-     * @return nome
-     */
-    public java.lang.String getNome() {
-        return nome;
-    }
+	public AtributoAndamento() {
+	}
 
+	public AtributoAndamento(String nome, String valor) {
+		this.nome = nome;
+		this.valor = valor;
+	}
 
-    /**
-     * Sets the nome value for this AtributoAndamento.
-     * 
-     * @param nome
-     */
-    public void setNome(java.lang.String nome) {
-        this.nome = nome;
-    }
+	public AtributoAndamento(String nome, String valor, String idOrigem) {
+		this.nome = nome;
+		this.valor = valor;
+		this.idOrigem = idOrigem;
+	}
 
+	public String getNome() {
+		return nome;
+	}
 
-    /**
-     * Gets the valor value for this AtributoAndamento.
-     * 
-     * @return valor
-     */
-    public java.lang.String getValor() {
-        return valor;
-    }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
+	public String getValor() {
+		return valor;
+	}
 
-    /**
-     * Sets the valor value for this AtributoAndamento.
-     * 
-     * @param valor
-     */
-    public void setValor(java.lang.String valor) {
-        this.valor = valor;
-    }
+	public void setValor(String valor) {
+		this.valor = valor;
+	}
 
+	public String getIdOrigem() {
+		return idOrigem;
+	}
 
-    /**
-     * Gets the idOrigem value for this AtributoAndamento.
-     * 
-     * @return idOrigem
-     */
-    public java.lang.String getIdOrigem() {
-        return idOrigem;
-    }
+	public void setIdOrigem(String idOrigem) {
+		this.idOrigem = idOrigem;
+	}
 
+	private Object __equalsCalc = null;
 
-    /**
-     * Sets the idOrigem value for this AtributoAndamento.
-     * 
-     * @param idOrigem
-     */
-    public void setIdOrigem(java.lang.String idOrigem) {
-        this.idOrigem = idOrigem;
-    }
+	public boolean equals(Object obj) {
+		if (!(obj instanceof AtributoAndamento))
+			return false;
+		AtributoAndamento other = (AtributoAndamento) obj;
+		if (this == obj)
+			return true;
+		if (__equalsCalc != null) {
+			return (__equalsCalc == obj);
+		}
+		__equalsCalc = obj;
+		boolean _equals;
+		_equals = true
+				&& ((this.nome == null && other.getNome() == null)
+						|| (this.nome != null && this.nome.equals(other.getNome())))
+				&& ((this.valor == null && other.getValor() == null)
+						|| (this.valor != null && this.valor.equals(other.getValor())))
+				&& ((this.idOrigem == null && other.getIdOrigem() == null)
+						|| (this.idOrigem != null && this.idOrigem.equals(other.getIdOrigem())));
+		__equalsCalc = null;
+		return _equals;
+	}
 
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof AtributoAndamento)) return false;
-        AtributoAndamento other = (AtributoAndamento) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.nome==null && other.getNome()==null) || 
-             (this.nome!=null &&
-              this.nome.equals(other.getNome()))) &&
-            ((this.valor==null && other.getValor()==null) || 
-             (this.valor!=null &&
-              this.valor.equals(other.getValor()))) &&
-            ((this.idOrigem==null && other.getIdOrigem()==null) || 
-             (this.idOrigem!=null &&
-              this.idOrigem.equals(other.getIdOrigem())));
-        __equalsCalc = null;
-        return _equals;
-    }
+	private boolean __hashCodeCalc = false;
 
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getNome() != null) {
-            _hashCode += getNome().hashCode();
-        }
-        if (getValor() != null) {
-            _hashCode += getValor().hashCode();
-        }
-        if (getIdOrigem() != null) {
-            _hashCode += getIdOrigem().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
-
+	public int hashCode() {
+		if (__hashCodeCalc) {
+			return 0;
+		}
+		__hashCodeCalc = true;
+		int _hashCode = 1;
+		if (getNome() != null) {
+			_hashCode += getNome().hashCode();
+		}
+		if (getValor() != null) {
+			_hashCode += getValor().hashCode();
+		}
+		if (getIdOrigem() != null) {
+			_hashCode += getIdOrigem().hashCode();
+		}
+		__hashCodeCalc = false;
+		return _hashCode;
+	}
 }

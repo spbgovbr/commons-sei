@@ -7,131 +7,100 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class RetornoInclusaoDocumento  implements java.io.Serializable {
-    private java.lang.String idDocumento;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private java.lang.String documentoFormatado;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class RetornoInclusaoDocumento implements Serializable {
 
-    private java.lang.String linkAcesso;
+	private static final long serialVersionUID = 1L;
 
-    public RetornoInclusaoDocumento() {
-    }
+	private String idDocumento;
 
-    public RetornoInclusaoDocumento(
-           java.lang.String idDocumento,
-           java.lang.String documentoFormatado,
-           java.lang.String linkAcesso) {
-           this.idDocumento = idDocumento;
-           this.documentoFormatado = documentoFormatado;
-           this.linkAcesso = linkAcesso;
-    }
+	private String documentoFormatado;
 
+	private String linkAcesso;
 
-    /**
-     * Gets the idDocumento value for this RetornoInclusaoDocumento.
-     * 
-     * @return idDocumento
-     */
-    public java.lang.String getIdDocumento() {
-        return idDocumento;
-    }
+	public RetornoInclusaoDocumento() {
+	}
 
+	public RetornoInclusaoDocumento(String idDocumento, String documentoFormatado, String linkAcesso) {
+		this.idDocumento = idDocumento;
+		this.documentoFormatado = documentoFormatado;
+		this.linkAcesso = linkAcesso;
+	}
 
-    /**
-     * Sets the idDocumento value for this RetornoInclusaoDocumento.
-     * 
-     * @param idDocumento
-     */
-    public void setIdDocumento(java.lang.String idDocumento) {
-        this.idDocumento = idDocumento;
-    }
+	public String getIdDocumento() {
+		return idDocumento;
+	}
 
+	public void setIdDocumento(String idDocumento) {
+		this.idDocumento = idDocumento;
+	}
 
-    /**
-     * Gets the documentoFormatado value for this RetornoInclusaoDocumento.
-     * 
-     * @return documentoFormatado
-     */
-    public java.lang.String getDocumentoFormatado() {
-        return documentoFormatado;
-    }
+	public String getDocumentoFormatado() {
+		return documentoFormatado;
+	}
 
+	public void setDocumentoFormatado(String documentoFormatado) {
+		this.documentoFormatado = documentoFormatado;
+	}
 
-    /**
-     * Sets the documentoFormatado value for this RetornoInclusaoDocumento.
-     * 
-     * @param documentoFormatado
-     */
-    public void setDocumentoFormatado(java.lang.String documentoFormatado) {
-        this.documentoFormatado = documentoFormatado;
-    }
+	public String getLinkAcesso() {
+		return linkAcesso;
+	}
 
+	public void setLinkAcesso(String linkAcesso) {
+		this.linkAcesso = linkAcesso;
+	}
 
-    /**
-     * Gets the linkAcesso value for this RetornoInclusaoDocumento.
-     * 
-     * @return linkAcesso
-     */
-    public java.lang.String getLinkAcesso() {
-        return linkAcesso;
-    }
+	private Object __equalsCalc = null;
 
+	public boolean equals(Object obj) {
+		if (!(obj instanceof RetornoInclusaoDocumento))
+			return false;
+		RetornoInclusaoDocumento other = (RetornoInclusaoDocumento) obj;
+		if (this == obj)
+			return true;
+		if (__equalsCalc != null) {
+			return (__equalsCalc == obj);
+		}
+		__equalsCalc = obj;
+		boolean _equals;
+		_equals = true
+				&& ((this.idDocumento == null && other.getIdDocumento() == null)
+						|| (this.idDocumento != null && this.idDocumento.equals(other.getIdDocumento())))
+				&& ((this.documentoFormatado == null && other.getDocumentoFormatado() == null)
+						|| (this.documentoFormatado != null
+								&& this.documentoFormatado.equals(other.getDocumentoFormatado())))
+				&& ((this.linkAcesso == null && other.getLinkAcesso() == null)
+						|| (this.linkAcesso != null && this.linkAcesso.equals(other.getLinkAcesso())));
+		__equalsCalc = null;
+		return _equals;
+	}
 
-    /**
-     * Sets the linkAcesso value for this RetornoInclusaoDocumento.
-     * 
-     * @param linkAcesso
-     */
-    public void setLinkAcesso(java.lang.String linkAcesso) {
-        this.linkAcesso = linkAcesso;
-    }
+	private boolean __hashCodeCalc = false;
 
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof RetornoInclusaoDocumento)) return false;
-        RetornoInclusaoDocumento other = (RetornoInclusaoDocumento) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.idDocumento==null && other.getIdDocumento()==null) || 
-             (this.idDocumento!=null &&
-              this.idDocumento.equals(other.getIdDocumento()))) &&
-            ((this.documentoFormatado==null && other.getDocumentoFormatado()==null) || 
-             (this.documentoFormatado!=null &&
-              this.documentoFormatado.equals(other.getDocumentoFormatado()))) &&
-            ((this.linkAcesso==null && other.getLinkAcesso()==null) || 
-             (this.linkAcesso!=null &&
-              this.linkAcesso.equals(other.getLinkAcesso())));
-        __equalsCalc = null;
-        return _equals;
-    }
-
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getIdDocumento() != null) {
-            _hashCode += getIdDocumento().hashCode();
-        }
-        if (getDocumentoFormatado() != null) {
-            _hashCode += getDocumentoFormatado().hashCode();
-        }
-        if (getLinkAcesso() != null) {
-            _hashCode += getLinkAcesso().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
-
+	public int hashCode() {
+		if (__hashCodeCalc) {
+			return 0;
+		}
+		__hashCodeCalc = true;
+		int _hashCode = 1;
+		if (getIdDocumento() != null) {
+			_hashCode += getIdDocumento().hashCode();
+		}
+		if (getDocumentoFormatado() != null) {
+			_hashCode += getDocumentoFormatado().hashCode();
+		}
+		if (getLinkAcesso() != null) {
+			_hashCode += getLinkAcesso().hashCode();
+		}
+		__hashCodeCalc = false;
+		return _hashCode;
+	}
 }

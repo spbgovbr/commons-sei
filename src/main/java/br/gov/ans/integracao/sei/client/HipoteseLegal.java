@@ -7,161 +7,115 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class HipoteseLegal  implements java.io.Serializable {
-    private java.lang.String idHipoteseLegal;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private java.lang.String nome;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class HipoteseLegal implements Serializable {
 
-    private java.lang.String baseLegal;
+	private static final long serialVersionUID = 1L;
 
-    private java.lang.String nivelAcesso;
+	private String idHipoteseLegal;
 
-    public HipoteseLegal() {
-    }
+	private String nome;
 
-    public HipoteseLegal(
-           java.lang.String idHipoteseLegal,
-           java.lang.String nome,
-           java.lang.String baseLegal,
-           java.lang.String nivelAcesso) {
-           this.idHipoteseLegal = idHipoteseLegal;
-           this.nome = nome;
-           this.baseLegal = baseLegal;
-           this.nivelAcesso = nivelAcesso;
-    }
+	private String baseLegal;
 
+	private String nivelAcesso;
 
-    /**
-     * Gets the idHipoteseLegal value for this HipoteseLegal.
-     * 
-     * @return idHipoteseLegal
-     */
-    public java.lang.String getIdHipoteseLegal() {
-        return idHipoteseLegal;
-    }
+	public HipoteseLegal() {
+	}
 
+	public HipoteseLegal(String idHipoteseLegal, String nome, String baseLegal, String nivelAcesso) {
+		this.idHipoteseLegal = idHipoteseLegal;
+		this.nome = nome;
+		this.baseLegal = baseLegal;
+		this.nivelAcesso = nivelAcesso;
+	}
 
-    /**
-     * Sets the idHipoteseLegal value for this HipoteseLegal.
-     * 
-     * @param idHipoteseLegal
-     */
-    public void setIdHipoteseLegal(java.lang.String idHipoteseLegal) {
-        this.idHipoteseLegal = idHipoteseLegal;
-    }
+	public String getIdHipoteseLegal() {
+		return idHipoteseLegal;
+	}
 
+	public void setIdHipoteseLegal(String idHipoteseLegal) {
+		this.idHipoteseLegal = idHipoteseLegal;
+	}
 
-    /**
-     * Gets the nome value for this HipoteseLegal.
-     * 
-     * @return nome
-     */
-    public java.lang.String getNome() {
-        return nome;
-    }
+	public String getNome() {
+		return nome;
+	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    /**
-     * Sets the nome value for this HipoteseLegal.
-     * 
-     * @param nome
-     */
-    public void setNome(java.lang.String nome) {
-        this.nome = nome;
-    }
+	public String getBaseLegal() {
+		return baseLegal;
+	}
 
+	public void setBaseLegal(String baseLegal) {
+		this.baseLegal = baseLegal;
+	}
 
-    /**
-     * Gets the baseLegal value for this HipoteseLegal.
-     * 
-     * @return baseLegal
-     */
-    public java.lang.String getBaseLegal() {
-        return baseLegal;
-    }
+	public String getNivelAcesso() {
+		return nivelAcesso;
+	}
 
+	public void setNivelAcesso(String nivelAcesso) {
+		this.nivelAcesso = nivelAcesso;
+	}
 
-    /**
-     * Sets the baseLegal value for this HipoteseLegal.
-     * 
-     * @param baseLegal
-     */
-    public void setBaseLegal(java.lang.String baseLegal) {
-        this.baseLegal = baseLegal;
-    }
+	private Object __equalsCalc = null;
 
+	public boolean equals(Object obj) {
+		if (!(obj instanceof HipoteseLegal))
+			return false;
+		HipoteseLegal other = (HipoteseLegal) obj;
+		if (this == obj)
+			return true;
+		if (__equalsCalc != null) {
+			return (__equalsCalc == obj);
+		}
+		__equalsCalc = obj;
+		boolean _equals;
+		_equals = true
+				&& ((this.idHipoteseLegal == null && other.getIdHipoteseLegal() == null)
+						|| (this.idHipoteseLegal != null && this.idHipoteseLegal.equals(other.getIdHipoteseLegal())))
+				&& ((this.nome == null && other.getNome() == null)
+						|| (this.nome != null && this.nome.equals(other.getNome())))
+				&& ((this.baseLegal == null && other.getBaseLegal() == null)
+						|| (this.baseLegal != null && this.baseLegal.equals(other.getBaseLegal())))
+				&& ((this.nivelAcesso == null && other.getNivelAcesso() == null)
+						|| (this.nivelAcesso != null && this.nivelAcesso.equals(other.getNivelAcesso())));
+		__equalsCalc = null;
+		return _equals;
+	}
 
-    /**
-     * Gets the nivelAcesso value for this HipoteseLegal.
-     * 
-     * @return nivelAcesso
-     */
-    public java.lang.String getNivelAcesso() {
-        return nivelAcesso;
-    }
+	private boolean __hashCodeCalc = false;
 
-
-    /**
-     * Sets the nivelAcesso value for this HipoteseLegal.
-     * 
-     * @param nivelAcesso
-     */
-    public void setNivelAcesso(java.lang.String nivelAcesso) {
-        this.nivelAcesso = nivelAcesso;
-    }
-
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof HipoteseLegal)) return false;
-        HipoteseLegal other = (HipoteseLegal) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.idHipoteseLegal==null && other.getIdHipoteseLegal()==null) || 
-             (this.idHipoteseLegal!=null &&
-              this.idHipoteseLegal.equals(other.getIdHipoteseLegal()))) &&
-            ((this.nome==null && other.getNome()==null) || 
-             (this.nome!=null &&
-              this.nome.equals(other.getNome()))) &&
-            ((this.baseLegal==null && other.getBaseLegal()==null) || 
-             (this.baseLegal!=null &&
-              this.baseLegal.equals(other.getBaseLegal()))) &&
-            ((this.nivelAcesso==null && other.getNivelAcesso()==null) || 
-             (this.nivelAcesso!=null &&
-              this.nivelAcesso.equals(other.getNivelAcesso())));
-        __equalsCalc = null;
-        return _equals;
-    }
-
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getIdHipoteseLegal() != null) {
-            _hashCode += getIdHipoteseLegal().hashCode();
-        }
-        if (getNome() != null) {
-            _hashCode += getNome().hashCode();
-        }
-        if (getBaseLegal() != null) {
-            _hashCode += getBaseLegal().hashCode();
-        }
-        if (getNivelAcesso() != null) {
-            _hashCode += getNivelAcesso().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
-
+	public int hashCode() {
+		if (__hashCodeCalc) {
+			return 0;
+		}
+		__hashCodeCalc = true;
+		int _hashCode = 1;
+		if (getIdHipoteseLegal() != null) {
+			_hashCode += getIdHipoteseLegal().hashCode();
+		}
+		if (getNome() != null) {
+			_hashCode += getNome().hashCode();
+		}
+		if (getBaseLegal() != null) {
+			_hashCode += getBaseLegal().hashCode();
+		}
+		if (getNivelAcesso() != null) {
+			_hashCode += getNivelAcesso().hashCode();
+		}
+		__hashCodeCalc = false;
+		return _hashCode;
+	}
 }

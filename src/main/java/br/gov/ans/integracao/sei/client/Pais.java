@@ -7,101 +7,83 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class Pais  implements java.io.Serializable {
-    private java.lang.String idPais;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private java.lang.String nome;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Pais implements Serializable {
 
-    public Pais() {
-    }
+	private static final long serialVersionUID = 1L;
 
-    public Pais(
-           java.lang.String idPais,
-           java.lang.String nome) {
-           this.idPais = idPais;
-           this.nome = nome;
-    }
+	private String idPais;
 
+	private String nome;
 
-    /**
-     * Gets the idPais value for this Pais.
-     * 
-     * @return idPais
-     */
-    public java.lang.String getIdPais() {
-        return idPais;
-    }
+	public Pais() {
+	}
 
+	public Pais(String idPais, String nome) {
+		this.idPais = idPais;
+		this.nome = nome;
+	}
 
-    /**
-     * Sets the idPais value for this Pais.
-     * 
-     * @param idPais
-     */
-    public void setIdPais(java.lang.String idPais) {
-        this.idPais = idPais;
-    }
+	public String getIdPais() {
+		return idPais;
+	}
 
+	public void setIdPais(String idPais) {
+		this.idPais = idPais;
+	}
 
-    /**
-     * Gets the nome value for this Pais.
-     * 
-     * @return nome
-     */
-    public java.lang.String getNome() {
-        return nome;
-    }
+	public String getNome() {
+		return nome;
+	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    /**
-     * Sets the nome value for this Pais.
-     * 
-     * @param nome
-     */
-    public void setNome(java.lang.String nome) {
-        this.nome = nome;
-    }
+	private Object __equalsCalc = null;
 
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof Pais)) return false;
-        Pais other = (Pais) obj;
-        if (obj == null) return false;
-        if (this == obj) return true;
-        if (__equalsCalc != null) {
-            return (__equalsCalc == obj);
-        }
-        __equalsCalc = obj;
-        boolean _equals;
-        _equals = true && 
-            ((this.idPais==null && other.getIdPais()==null) || 
-             (this.idPais!=null &&
-              this.idPais.equals(other.getIdPais()))) &&
-            ((this.nome==null && other.getNome()==null) || 
-             (this.nome!=null &&
-              this.nome.equals(other.getNome())));
-        __equalsCalc = null;
-        return _equals;
-    }
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Pais))
+			return false;
+		Pais other = (Pais) obj;
+		if (this == obj)
+			return true;
+		if (__equalsCalc != null) {
+			return (__equalsCalc == obj);
+		}
+		__equalsCalc = obj;
+		boolean _equals;
+		_equals = true
+				&& ((this.idPais == null && other.getIdPais() == null)
+						|| (this.idPais != null && this.idPais.equals(other.getIdPais())))
+				&& ((this.nome == null && other.getNome() == null)
+						|| (this.nome != null && this.nome.equals(other.getNome())));
+		__equalsCalc = null;
+		return _equals;
+	}
 
-    private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
-        if (__hashCodeCalc) {
-            return 0;
-        }
-        __hashCodeCalc = true;
-        int _hashCode = 1;
-        if (getIdPais() != null) {
-            _hashCode += getIdPais().hashCode();
-        }
-        if (getNome() != null) {
-            _hashCode += getNome().hashCode();
-        }
-        __hashCodeCalc = false;
-        return _hashCode;
-    }
+	private boolean __hashCodeCalc = false;
 
+	public int hashCode() {
+		if (__hashCodeCalc) {
+			return 0;
+		}
+		__hashCodeCalc = true;
+		int _hashCode = 1;
+		if (getIdPais() != null) {
+			_hashCode += getIdPais().hashCode();
+		}
+		if (getNome() != null) {
+			_hashCode += getNome().hashCode();
+		}
+		__hashCodeCalc = false;
+		return _hashCode;
+	}
 }

@@ -7,38 +7,46 @@
 
 package br.gov.ans.integracao.sei.client;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 
-@XmlRootElement
-public class RetornoConsultaBloco  implements java.io.Serializable {
-    private java.lang.String idBloco;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-    private br.gov.ans.integracao.sei.client.Unidade unidade;
+@JsonInclude(content = Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class RetornoConsultaBloco  implements Serializable {
 
-    private br.gov.ans.integracao.sei.client.Usuario usuario;
+	private static final long serialVersionUID = 1L;
 
-    private java.lang.String descricao;
+	private String idBloco;
 
-    private java.lang.String tipo;
+    private Unidade unidade;
 
-    private java.lang.String estado;
+    private Usuario usuario;
 
-    private br.gov.ans.integracao.sei.client.Unidade[] unidadesDisponibilizacao;
+    private String descricao;
 
-    private br.gov.ans.integracao.sei.client.ProtocoloBloco[] protocolos;
+    private String tipo;
+
+    private String estado;
+
+    private Unidade[] unidadesDisponibilizacao;
+
+    private ProtocoloBloco[] protocolos;
 
     public RetornoConsultaBloco() {
     }
 
     public RetornoConsultaBloco(
-           java.lang.String idBloco,
-           br.gov.ans.integracao.sei.client.Unidade unidade,
-           br.gov.ans.integracao.sei.client.Usuario usuario,
-           java.lang.String descricao,
-           java.lang.String tipo,
-           java.lang.String estado,
-           br.gov.ans.integracao.sei.client.Unidade[] unidadesDisponibilizacao,
-           br.gov.ans.integracao.sei.client.ProtocoloBloco[] protocolos) {
+           String idBloco,
+           Unidade unidade,
+           Usuario usuario,
+           String descricao,
+           String tipo,
+           String estado,
+           Unidade[] unidadesDisponibilizacao,
+           ProtocoloBloco[] protocolos) {
            this.idBloco = idBloco;
            this.unidade = unidade;
            this.usuario = usuario;
@@ -55,7 +63,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @return idBloco
      */
-    public java.lang.String getIdBloco() {
+    public String getIdBloco() {
         return idBloco;
     }
 
@@ -65,7 +73,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @param idBloco
      */
-    public void setIdBloco(java.lang.String idBloco) {
+    public void setIdBloco(String idBloco) {
         this.idBloco = idBloco;
     }
 
@@ -75,7 +83,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @return unidade
      */
-    public br.gov.ans.integracao.sei.client.Unidade getUnidade() {
+    public Unidade getUnidade() {
         return unidade;
     }
 
@@ -85,7 +93,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @param unidade
      */
-    public void setUnidade(br.gov.ans.integracao.sei.client.Unidade unidade) {
+    public void setUnidade(Unidade unidade) {
         this.unidade = unidade;
     }
 
@@ -95,7 +103,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @return usuario
      */
-    public br.gov.ans.integracao.sei.client.Usuario getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
@@ -105,7 +113,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @param usuario
      */
-    public void setUsuario(br.gov.ans.integracao.sei.client.Usuario usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 
@@ -115,7 +123,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @return descricao
      */
-    public java.lang.String getDescricao() {
+    public String getDescricao() {
         return descricao;
     }
 
@@ -125,7 +133,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @param descricao
      */
-    public void setDescricao(java.lang.String descricao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
@@ -135,7 +143,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @return tipo
      */
-    public java.lang.String getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
@@ -145,7 +153,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @param tipo
      */
-    public void setTipo(java.lang.String tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
@@ -155,7 +163,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @return estado
      */
-    public java.lang.String getEstado() {
+    public String getEstado() {
         return estado;
     }
 
@@ -165,7 +173,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @param estado
      */
-    public void setEstado(java.lang.String estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 
@@ -175,7 +183,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @return unidadesDisponibilizacao
      */
-    public br.gov.ans.integracao.sei.client.Unidade[] getUnidadesDisponibilizacao() {
+    public Unidade[] getUnidadesDisponibilizacao() {
         return unidadesDisponibilizacao;
     }
 
@@ -185,7 +193,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @param unidadesDisponibilizacao
      */
-    public void setUnidadesDisponibilizacao(br.gov.ans.integracao.sei.client.Unidade[] unidadesDisponibilizacao) {
+    public void setUnidadesDisponibilizacao(Unidade[] unidadesDisponibilizacao) {
         this.unidadesDisponibilizacao = unidadesDisponibilizacao;
     }
 
@@ -195,7 +203,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @return protocolos
      */
-    public br.gov.ans.integracao.sei.client.ProtocoloBloco[] getProtocolos() {
+    public ProtocoloBloco[] getProtocolos() {
         return protocolos;
     }
 
@@ -205,15 +213,14 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
      * 
      * @param protocolos
      */
-    public void setProtocolos(br.gov.ans.integracao.sei.client.ProtocoloBloco[] protocolos) {
+    public void setProtocolos(ProtocoloBloco[] protocolos) {
         this.protocolos = protocolos;
     }
 
-    private java.lang.Object __equalsCalc = null;
-    public synchronized boolean equals(java.lang.Object obj) {
+    private Object __equalsCalc = null;
+    public boolean equals(Object obj) {
         if (!(obj instanceof RetornoConsultaBloco)) return false;
         RetornoConsultaBloco other = (RetornoConsultaBloco) obj;
-        if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
             return (__equalsCalc == obj);
@@ -250,7 +257,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
     }
 
     private boolean __hashCodeCalc = false;
-    public synchronized int hashCode() {
+    public int hashCode() {
         if (__hashCodeCalc) {
             return 0;
         }
@@ -278,7 +285,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getUnidadesDisponibilizacao());
                  i++) {
-                java.lang.Object obj = java.lang.reflect.Array.get(getUnidadesDisponibilizacao(), i);
+                Object obj = java.lang.reflect.Array.get(getUnidadesDisponibilizacao(), i);
                 if (obj != null &&
                     !obj.getClass().isArray()) {
                     _hashCode += obj.hashCode();
@@ -289,7 +296,7 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getProtocolos());
                  i++) {
-                java.lang.Object obj = java.lang.reflect.Array.get(getProtocolos(), i);
+                Object obj = java.lang.reflect.Array.get(getProtocolos(), i);
                 if (obj != null &&
                     !obj.getClass().isArray()) {
                     _hashCode += obj.hashCode();
@@ -299,5 +306,4 @@ public class RetornoConsultaBloco  implements java.io.Serializable {
         __hashCodeCalc = false;
         return _hashCode;
     }
-
 }
