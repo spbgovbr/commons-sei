@@ -4,26 +4,20 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @JsonInclude(content = Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
 public class AtribuicaoProcesso {
 		
 	private String processo;
 	private boolean reabrir;
-	
-	public AtribuicaoProcesso(){}
-	
-	public String getProcesso() {
-		return processo;
-	}
-	public void setProcesso(String processo) {
-		this.processo = processo;
-	}
-	public boolean isReabrir() {
-		return reabrir;
-	}
-	public void setReabrir(boolean reabrir) {
-		this.reabrir = reabrir;
-	}
 	
 }

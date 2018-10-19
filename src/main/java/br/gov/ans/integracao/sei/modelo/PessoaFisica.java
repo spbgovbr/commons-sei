@@ -7,9 +7,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import br.gov.ans.integracao.sei.modelo.enums.Sexo;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @JsonInclude(content = Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper=true)
+@Data
+@Builder
 public class PessoaFisica extends Pessoa {
 	
 	private Sexo sexo;
@@ -19,60 +29,5 @@ public class PessoaFisica extends Pessoa {
 	private Date dataNascimento;
 	private String matricula;
 	private String matriculaOab;
-
-	public Sexo getSexo() {
-		return sexo;
-	}
-
-	public void setSexo(Sexo sexo) {
-		this.sexo = sexo;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public String getRg() {
-		return rg;
-	}
-
-	public void setRg(String rg) {
-		this.rg = rg;
-	}
-
-	public String getOrgaoEmissor() {
-		return orgaoEmissor;
-	}
-
-	public void setOrgaoEmissor(String orgaoEmissor) {
-		this.orgaoEmissor = orgaoEmissor;
-	}
-
-	public Date getDataNascimento() {
-		return dataNascimento;
-	}
-
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-
-	public String getMatricula() {
-		return matricula;
-	}
-
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-	}
 	
-	public String getMatriculaOab() {
-		return matriculaOab;
-	}
-
-	public void setMatriculaOab(String oab) {
-		this.matriculaOab = oab;
-	}
 }

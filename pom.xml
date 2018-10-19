@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
     <groupId>br.gov.ans.commons</groupId>
     <artifactId>ans-commons-sei</artifactId>
-	<version>1.1.0</version>
+	<version>1.2.0</version>
 	<name>ans-commons-sei</name>
 	<packaging>jar</packaging>
 	<description>Biblioteca de apoio aos clientes do SEI-Broker.</description>
@@ -15,7 +15,14 @@
 			<artifactId>jackson-annotations</artifactId>
 			<version>2.9.7</version>
 		</dependency>
-
+		
+		<!-- LOMBOK -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.2</version>
+		    <scope>provided</scope>
+		</dependency>
 
 		<!-- HASH -->
 		<dependency>

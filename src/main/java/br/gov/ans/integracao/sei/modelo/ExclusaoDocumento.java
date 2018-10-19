@@ -7,10 +7,20 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @JsonInclude(content = Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
 public class ExclusaoDocumento {
 
+	@JsonIgnore
 	private long id;
 	private Date data;
 	private String numero;
@@ -18,9 +28,6 @@ public class ExclusaoDocumento {
 	private String unidade;
 	private String motivo;
 	
-	public ExclusaoDocumento(){		
-	}
-
 	public ExclusaoDocumento(String numero, String sistema, String unidade, String motivo){
 		this.numero = numero;
 		this.sistema = sistema;
@@ -29,53 +36,4 @@ public class ExclusaoDocumento {
 		this.data = new Date();		
 	}
 	
-	@JsonIgnore
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public Date getData() {
-		return data;
-	}
-
-	public void setData(Date data) {
-		this.data = data;
-	}
-
-	public String getNumero() {
-		return numero;
-	}
-
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
-
-	public String getSistema() {
-		return sistema;
-	}
-
-	public void setSistema(String sistema) {
-		this.sistema = sistema;
-	}
-
-	public String getUnidade() {
-		return unidade;
-	}
-
-	public void setUnidade(String unidade) {
-		this.unidade = unidade;
-	}
-
-	public String getMotivo() {
-		return motivo;
-	}
-
-	public void setMotivo(String motivo) {
-		this.motivo = motivo;
-	}
-
 }

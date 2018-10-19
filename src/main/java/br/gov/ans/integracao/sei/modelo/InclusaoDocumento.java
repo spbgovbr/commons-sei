@@ -8,11 +8,20 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import br.gov.ans.integracao.sei.client.Documento;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @JsonInclude(content = Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
 public class InclusaoDocumento {
 
+	@JsonIgnore
 	private long id;
 	private Date data;
 	private String nome;
@@ -24,10 +33,6 @@ public class InclusaoDocumento {
 	private String numeroInformado;
 	private String link;	
 	
-	public InclusaoDocumento(){
-		
-	}
-	
 	public InclusaoDocumento(Documento documento, String unidade, String sistema, String hash){
 		this.unidade = unidade;
 		this.sistema = sistema;
@@ -38,88 +43,6 @@ public class InclusaoDocumento {
 		this.processo = documento.getIdProcedimento();
 		
 		this.data = new Date();
-	}
-
-	@JsonIgnore
-	public long getId() {
-		return id;
-	}
-
-	@JsonIgnore
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public Date getData() {
-		return data;
-	}
-
-	public void setData(Date data) {
-		this.data = data;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getNumero() {
-		return numero;
-	}
-
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
-
-	public String getHash() {
-		return hash;
-	}
-
-	public void setHash(String hash) {
-		this.hash = hash;
-	}
-
-	public String getSistema() {
-		return sistema;
-	}
-
-	public void setSistema(String sistema) {
-		this.sistema = sistema;
-	}
-
-	public String getUnidade() {
-		return unidade;
-	}
-
-	public void setUnidade(String unidade) {
-		this.unidade = unidade;
-	}
-
-	public String getProcesso() {
-		return processo;
-	}
-
-	public void setProcesso(String processo) {
-		this.processo = processo;
-	}
-
-	public String getNumeroInformado() {
-		return numeroInformado;
-	}
-
-	public void setNumeroInformado(String numeroInformado) {
-		this.numeroInformado = numeroInformado;
-	}
-
-	public String getLink() {
-		return link;
-	}
-
-	public void setLink(String link) {
-		this.link = link;
 	}
 
 }

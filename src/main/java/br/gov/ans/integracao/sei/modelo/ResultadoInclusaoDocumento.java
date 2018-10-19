@@ -5,24 +5,20 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import br.gov.ans.integracao.sei.client.RetornoInclusaoDocumento;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @JsonInclude(content = Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
 public class ResultadoInclusaoDocumento {
 	
 	private RetornoInclusaoDocumento retorno;
 	private String mensagem;
-	
-	public RetornoInclusaoDocumento getRetorno() {
-		return retorno;
-	}
-	public void setRetorno(RetornoInclusaoDocumento retorno) {
-		this.retorno = retorno;
-	}
-	public String getMensagem() {
-		return mensagem;
-	}
-	public void setMensagem(String mensagem) {
-		this.mensagem = mensagem;
-	}	
+		
 }
